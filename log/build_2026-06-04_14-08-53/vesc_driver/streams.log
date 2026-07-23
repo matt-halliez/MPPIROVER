@@ -1,0 +1,88 @@
+[0.071s] Invoking command in '/home/sdc6/f1tenth_ws/build/vesc_driver': AMENT_PREFIX_PATH=/home/sdc6/f1tenth_ws/install/vesc_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sdc6/f1tenth_ws/install/vesc_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/sdc6/f1tenth_ws/install/vesc_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/usr/local/cuda-12.6/lib64 PYTHONPATH=/home/sdc6/f1tenth_ws/install/vesc_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/sdc6/f1tenth_ws/src/f1tenth_system/vesc/vesc_driver -DCMAKE_INSTALL_PREFIX=/home/sdc6/f1tenth_ws/install/vesc_driver
+[0.078s] -- Found ament_cmake_auto: 1.3.14 (/opt/ros/humble/share/ament_cmake_auto/cmake)
+[0.740s] -- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.740s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.791s] -- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.808s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.831s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.892s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.895s] -- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[1.130s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.504s] -- Found asio_cmake_module: 1.2.0 (/opt/ros/humble/share/asio_cmake_module/cmake)
+[1.507s] -- Found ASIO: /usr/include  
+[1.682s] -- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.716s] [0mIn this package, headers install destination is set to `include` by ament_auto_package. It is recommended to install `include/vesc_driver` instead and will be the default behavior of ament_auto_package from ROS 2 Kilted Kaiju. On distributions before Kilted, ament_auto_package behaves the same way when you use USE_SCOPED_HEADER_INSTALL_DIR option.[0m
+[1.723s] -- Added test 'copyright' to check source files copyright and LICENSE
+[1.727s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[1.727s] -- Configured cppcheck include dirs: /home/sdc6/f1tenth_ws/src/f1tenth_system/vesc/vesc_driver/include
+[1.727s] -- Configured cppcheck exclude dirs and/or files: 
+[1.731s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[1.732s] -- Configured cpplint exclude dirs and/or files: 
+[1.733s] -- Added test 'flake8' to check Python code syntax and style conventions
+[1.735s] -- Added test 'lint_cmake' to check CMake code style
+[1.736s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[1.739s] -- Added test 'uncrustify' to check C / C++ code style
+[1.739s] -- Configured uncrustify additional arguments: 
+[1.740s] -- Added test 'xmllint' to check XML markup files
+[1.746s] -- Configuring done
+[1.824s] -- Generating done
+[1.843s] -- Build files have been written to: /home/sdc6/f1tenth_ws/build/vesc_driver
+[1.877s] Invoked command in '/home/sdc6/f1tenth_ws/build/vesc_driver' returned '0': AMENT_PREFIX_PATH=/home/sdc6/f1tenth_ws/install/vesc_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sdc6/f1tenth_ws/install/vesc_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/sdc6/f1tenth_ws/install/vesc_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/usr/local/cuda-12.6/lib64 PYTHONPATH=/home/sdc6/f1tenth_ws/install/vesc_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/sdc6/f1tenth_ws/src/f1tenth_system/vesc/vesc_driver -DCMAKE_INSTALL_PREFIX=/home/sdc6/f1tenth_ws/install/vesc_driver
+[1.878s] Invoking command in '/home/sdc6/f1tenth_ws/build/vesc_driver': AMENT_PREFIX_PATH=/home/sdc6/f1tenth_ws/install/vesc_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sdc6/f1tenth_ws/install/vesc_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/sdc6/f1tenth_ws/install/vesc_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/usr/local/cuda-12.6/lib64 PYTHONPATH=/home/sdc6/f1tenth_ws/install/vesc_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/sdc6/f1tenth_ws/build/vesc_driver -- -j6 -l6
+[2.013s] [ 10%] [32mBuilding CXX object CMakeFiles/vesc_driver.dir/src/vesc_driver.cpp.o[0m
+[2.017s] [ 20%] [32mBuilding CXX object CMakeFiles/vesc_driver.dir/src/vesc_interface.cpp.o[0m
+[2.027s] [ 30%] [32mBuilding CXX object CMakeFiles/vesc_driver.dir/src/vesc_packet.cpp.o[0m
+[2.029s] [ 40%] [32mBuilding CXX object CMakeFiles/vesc_driver.dir/src/vesc_packet_factory.cpp.o[0m
+[2.071s] [ 50%] [32mBuilding CXX object CMakeFiles/vesc_driver_node.dir/rclcpp_components/node_main_vesc_driver_node.cpp.o[0m
+[10.990s] [ 60%] [32m[1mLinking CXX executable vesc_driver_node[0m
+[11.235s] [ 60%] Built target vesc_driver_node
+[24.441s] [ 70%] [32m[1mLinking CXX shared library libvesc_driver.so[0m
+[25.716s] [ 70%] Built target vesc_driver
+[25.750s] [ 90%] [32mBuilding CXX object CMakeFiles/vesc_device_namer.dir/src/vesc_device_namer.cpp.o[0m
+[25.750s] [ 90%] [32mBuilding CXX object CMakeFiles/vesc_device_namer.dir/src/vesc_device_uuid_lookup.cpp.o[0m
+[27.217s] [100%] [32m[1mLinking CXX executable vesc_device_namer[0m
+[27.855s] [100%] Built target vesc_device_namer
+[27.880s] Invoked command in '/home/sdc6/f1tenth_ws/build/vesc_driver' returned '0': AMENT_PREFIX_PATH=/home/sdc6/f1tenth_ws/install/vesc_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sdc6/f1tenth_ws/install/vesc_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/sdc6/f1tenth_ws/install/vesc_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/usr/local/cuda-12.6/lib64 PYTHONPATH=/home/sdc6/f1tenth_ws/install/vesc_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/sdc6/f1tenth_ws/build/vesc_driver -- -j6 -l6
+[27.884s] Invoking command in '/home/sdc6/f1tenth_ws/build/vesc_driver': AMENT_PREFIX_PATH=/home/sdc6/f1tenth_ws/install/vesc_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sdc6/f1tenth_ws/install/vesc_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/sdc6/f1tenth_ws/install/vesc_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/usr/local/cuda-12.6/lib64 PYTHONPATH=/home/sdc6/f1tenth_ws/install/vesc_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/sdc6/f1tenth_ws/build/vesc_driver
+[27.900s] -- Install configuration: ""
+[27.900s] -- Installing: /home/sdc6/f1tenth_ws/install/vesc_driver/lib/vesc_driver/vesc_driver_node
+[27.901s] -- Set runtime path of "/home/sdc6/f1tenth_ws/install/vesc_driver/lib/vesc_driver/vesc_driver_node" to ""
+[27.902s] -- Installing: /home/sdc6/f1tenth_ws/install/vesc_driver/include
+[27.902s] -- Installing: /home/sdc6/f1tenth_ws/install/vesc_driver/include/vesc_driver
+[27.902s] -- Installing: /home/sdc6/f1tenth_ws/install/vesc_driver/include/vesc_driver/crc.hpp
+[27.903s] -- Installing: /home/sdc6/f1tenth_ws/install/vesc_driver/include/vesc_driver/datatypes.hpp
+[27.903s] -- Installing: /home/sdc6/f1tenth_ws/install/vesc_driver/include/vesc_driver/vesc_packet.hpp
+[27.903s] -- Installing: /home/sdc6/f1tenth_ws/install/vesc_driver/include/vesc_driver/vesc_packet_factory.hpp
+[27.904s] -- Installing: /home/sdc6/f1tenth_ws/install/vesc_driver/include/vesc_driver/vesc_device_uuid_lookup.hpp
+[27.904s] -- Installing: /home/sdc6/f1tenth_ws/install/vesc_driver/include/vesc_driver/vesc_driver.hpp
+[27.904s] -- Installing: /home/sdc6/f1tenth_ws/install/vesc_driver/include/vesc_driver/vesc_interface.hpp
+[27.905s] -- Installing: /home/sdc6/f1tenth_ws/install/vesc_driver/share/vesc_driver/environment/library_path.sh
+[27.905s] -- Installing: /home/sdc6/f1tenth_ws/install/vesc_driver/share/vesc_driver/environment/library_path.dsv
+[27.905s] -- Installing: /home/sdc6/f1tenth_ws/install/vesc_driver/lib/libvesc_driver.so
+[27.920s] -- Set runtime path of "/home/sdc6/f1tenth_ws/install/vesc_driver/lib/libvesc_driver.so" to ""
+[27.920s] -- Installing: /home/sdc6/f1tenth_ws/install/vesc_driver/lib/vesc_driver/vesc_device_namer
+[27.920s] -- Set runtime path of "/home/sdc6/f1tenth_ws/install/vesc_driver/lib/vesc_driver/vesc_device_namer" to ""
+[27.921s] -- Installing: /home/sdc6/f1tenth_ws/install/vesc_driver/share/vesc_driver/launch
+[27.921s] -- Installing: /home/sdc6/f1tenth_ws/install/vesc_driver/share/vesc_driver/launch/vesc_driver_node.launch.py
+[27.921s] -- Installing: /home/sdc6/f1tenth_ws/install/vesc_driver/share/vesc_driver/params
+[27.922s] -- Installing: /home/sdc6/f1tenth_ws/install/vesc_driver/share/vesc_driver/params/vesc_config.yaml
+[27.922s] -- Installing: /home/sdc6/f1tenth_ws/install/vesc_driver/share/ament_index/resource_index/package_run_dependencies/vesc_driver
+[27.922s] -- Installing: /home/sdc6/f1tenth_ws/install/vesc_driver/share/ament_index/resource_index/parent_prefix_path/vesc_driver
+[27.923s] -- Installing: /home/sdc6/f1tenth_ws/install/vesc_driver/share/vesc_driver/environment/ament_prefix_path.sh
+[27.923s] -- Installing: /home/sdc6/f1tenth_ws/install/vesc_driver/share/vesc_driver/environment/ament_prefix_path.dsv
+[27.923s] -- Installing: /home/sdc6/f1tenth_ws/install/vesc_driver/share/vesc_driver/environment/path.sh
+[27.923s] -- Installing: /home/sdc6/f1tenth_ws/install/vesc_driver/share/vesc_driver/environment/path.dsv
+[27.924s] -- Installing: /home/sdc6/f1tenth_ws/install/vesc_driver/share/vesc_driver/local_setup.bash
+[27.924s] -- Installing: /home/sdc6/f1tenth_ws/install/vesc_driver/share/vesc_driver/local_setup.sh
+[27.924s] -- Installing: /home/sdc6/f1tenth_ws/install/vesc_driver/share/vesc_driver/local_setup.zsh
+[27.924s] -- Installing: /home/sdc6/f1tenth_ws/install/vesc_driver/share/vesc_driver/local_setup.dsv
+[27.925s] -- Installing: /home/sdc6/f1tenth_ws/install/vesc_driver/share/vesc_driver/package.dsv
+[27.925s] -- Installing: /home/sdc6/f1tenth_ws/install/vesc_driver/share/ament_index/resource_index/packages/vesc_driver
+[27.925s] -- Installing: /home/sdc6/f1tenth_ws/install/vesc_driver/share/ament_index/resource_index/rclcpp_components/vesc_driver
+[27.926s] -- Installing: /home/sdc6/f1tenth_ws/install/vesc_driver/share/vesc_driver/cmake/ament_cmake_export_dependencies-extras.cmake
+[27.926s] -- Installing: /home/sdc6/f1tenth_ws/install/vesc_driver/share/vesc_driver/cmake/ament_cmake_export_include_directories-extras.cmake
+[27.926s] -- Installing: /home/sdc6/f1tenth_ws/install/vesc_driver/share/vesc_driver/cmake/ament_cmake_export_libraries-extras.cmake
+[27.926s] -- Installing: /home/sdc6/f1tenth_ws/install/vesc_driver/share/vesc_driver/cmake/vesc_driverConfig.cmake
+[27.927s] -- Installing: /home/sdc6/f1tenth_ws/install/vesc_driver/share/vesc_driver/cmake/vesc_driverConfig-version.cmake
+[27.927s] -- Installing: /home/sdc6/f1tenth_ws/install/vesc_driver/share/vesc_driver/package.xml
+[27.930s] Invoked command in '/home/sdc6/f1tenth_ws/build/vesc_driver' returned '0': AMENT_PREFIX_PATH=/home/sdc6/f1tenth_ws/install/vesc_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sdc6/f1tenth_ws/install/vesc_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/sdc6/f1tenth_ws/install/vesc_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/usr/local/cuda-12.6/lib64 PYTHONPATH=/home/sdc6/f1tenth_ws/install/vesc_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/sdc6/f1tenth_ws/build/vesc_driver

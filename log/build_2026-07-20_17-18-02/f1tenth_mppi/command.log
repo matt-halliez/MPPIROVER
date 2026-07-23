@@ -1,0 +1,2 @@
+Invoking command in '/home/sdc6/f1tenth_ws/build/f1tenth_mppi': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/sdc6/f1tenth_ws/src/f1tenth_mppi -DCMAKE_INSTALL_PREFIX=/home/sdc6/f1tenth_ws/install/f1tenth_mppi
+Invoked command in '/home/sdc6/f1tenth_ws/build/f1tenth_mppi' returned '1': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/sdc6/f1tenth_ws/src/f1tenth_mppi -DCMAKE_INSTALL_PREFIX=/home/sdc6/f1tenth_ws/install/f1tenth_mppi

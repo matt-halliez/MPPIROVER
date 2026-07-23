@@ -1,0 +1,38 @@
+[0.647s] Invoking command in '/home/sdc6/f1tenth_ws/build/f1tenth_mppi': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/sdc6/f1tenth_ws/src/f1tenth_mppi -DCMAKE_INSTALL_PREFIX=/home/sdc6/f1tenth_ws/install/f1tenth_mppi
+[0.687s] -- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.940s] -- Found rclcpp: 16.0.19 (/opt/ros/humble/share/rclcpp/cmake)
+[0.990s] -- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.994s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.004s] -- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[1.021s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.042s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.093s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[1.095s] -- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[1.280s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.398s] -- Found rclpy: 3.3.21 (/opt/ros/humble/share/rclpy/cmake)
+[1.399s] -- Found geometry_msgs: 4.9.1 (/opt/ros/humble/share/geometry_msgs/cmake)
+[1.421s] -- Found nav_msgs: 4.9.1 (/opt/ros/humble/share/nav_msgs/cmake)
+[1.445s] -- Found ackermann_msgs: 2.0.2 (/opt/ros/humble/share/ackermann_msgs/cmake)
+[1.446s] -- Found sensor_msgs: 4.9.1 (/opt/ros/humble/share/sensor_msgs/cmake)
+[1.469s] -- Found visualization_msgs: 4.9.1 (/opt/ros/humble/share/visualization_msgs/cmake)
+[1.503s] -- Found tf2_ros: 0.25.20 (/opt/ros/humble/share/tf2_ros/cmake)
+[1.684s] Traceback (most recent call last):
+[1.684s]   File "/opt/ros/humble/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py", line 22, in <module>
+[1.684s]     from catkin_pkg.package import parse_package_string
+[1.685s] ModuleNotFoundError: No module named 'catkin_pkg'
+[1.691s] [31mCMake Error at /opt/ros/humble/share/ament_cmake_core/cmake/core/ament_package_xml.cmake:95 (message):
+[1.691s]   execute_process(/home/sdc6/test/test_env/bin/python3
+[1.691s]   /opt/ros/humble/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py
+[1.692s]   /home/sdc6/f1tenth_ws/src/f1tenth_mppi/package.xml
+[1.692s]   /home/sdc6/f1tenth_ws/build/f1tenth_mppi/ament_cmake_core/package.cmake)
+[1.692s]   returned error code 1
+[1.692s] Call Stack (most recent call first):
+[1.692s]   /opt/ros/humble/share/ament_cmake_core/cmake/core/ament_package_xml.cmake:49 (_ament_package_xml)
+[1.692s]   /opt/ros/humble/share/ament_cmake_python/cmake/ament_python_install_package.cmake:60 (ament_package_xml)
+[1.692s]   /opt/ros/humble/share/ament_cmake_python/cmake/ament_python_install_package.cmake:39 (_ament_cmake_python_install_package)
+[1.692s]   CMakeLists.txt:39 (ament_python_install_package)
+[1.693s] 
+[1.693s] [0m
+[1.693s] -- Configuring incomplete, errors occurred!
+[1.693s] See also "/home/sdc6/f1tenth_ws/build/f1tenth_mppi/CMakeFiles/CMakeOutput.log".
+[2.735s] Invoked command in '/home/sdc6/f1tenth_ws/build/f1tenth_mppi' returned '1': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/sdc6/f1tenth_ws/src/f1tenth_mppi -DCMAKE_INSTALL_PREFIX=/home/sdc6/f1tenth_ws/install/f1tenth_mppi

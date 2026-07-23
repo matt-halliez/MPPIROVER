@@ -1,0 +1,3 @@
+[ 42%] Built target vesc_ackermann
+[ 71%] Built target ackermann_to_vesc_node
+[100%] Built target vesc_to_odom_node

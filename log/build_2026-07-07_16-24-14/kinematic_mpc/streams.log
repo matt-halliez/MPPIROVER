@@ -1,0 +1,56 @@
+[2.619s] Invoking command in '/home/sdc6/f1tenth_ws/src/f1tenth_mpc': PS1=(test_env) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/sdc6/f1tenth_ws/build/kinematic_mpc/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sdc6/f1tenth_ws/install/kinematic_mpc/lib/python3.10/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(test_env) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/kinematic_mpc build --build-base /home/sdc6/f1tenth_ws/build/kinematic_mpc/build install --record /home/sdc6/f1tenth_ws/build/kinematic_mpc/install.log --install-scripts $base/lib/kinematic_mpc --single-version-externally-managed install_data
+[3.090s] /usr/lib/python3/dist-packages/setuptools/dist.py:723: UserWarning: Usage of dash-separated 'script-dir' will not be supported in future versions. Please use the underscore name 'script_dir' instead
+[3.090s]   warnings.warn(
+[3.107s] running egg_info
+[3.112s] creating ../../build/kinematic_mpc/kinematic_mpc.egg-info
+[3.112s] writing ../../build/kinematic_mpc/kinematic_mpc.egg-info/PKG-INFO
+[3.112s] writing dependency_links to ../../build/kinematic_mpc/kinematic_mpc.egg-info/dependency_links.txt
+[3.113s] writing entry points to ../../build/kinematic_mpc/kinematic_mpc.egg-info/entry_points.txt
+[3.113s] writing requirements to ../../build/kinematic_mpc/kinematic_mpc.egg-info/requires.txt
+[3.113s] writing top-level names to ../../build/kinematic_mpc/kinematic_mpc.egg-info/top_level.txt
+[3.113s] writing manifest file '../../build/kinematic_mpc/kinematic_mpc.egg-info/SOURCES.txt'
+[3.117s] reading manifest file '../../build/kinematic_mpc/kinematic_mpc.egg-info/SOURCES.txt'
+[3.118s] writing manifest file '../../build/kinematic_mpc/kinematic_mpc.egg-info/SOURCES.txt'
+[3.118s] running build
+[3.119s] running build_py
+[3.119s] creating /home/sdc6/f1tenth_ws/build/kinematic_mpc/build
+[3.119s] creating /home/sdc6/f1tenth_ws/build/kinematic_mpc/build/lib
+[3.119s] creating /home/sdc6/f1tenth_ws/build/kinematic_mpc/build/lib/kinematic_mpc
+[3.119s] copying kinematic_mpc/utils.py -> /home/sdc6/f1tenth_ws/build/kinematic_mpc/build/lib/kinematic_mpc
+[3.120s] copying kinematic_mpc/kinematic_mpc_node_cbf.py -> /home/sdc6/f1tenth_ws/build/kinematic_mpc/build/lib/kinematic_mpc
+[3.120s] copying kinematic_mpc/kinematic_mpc_node.py -> /home/sdc6/f1tenth_ws/build/kinematic_mpc/build/lib/kinematic_mpc
+[3.121s] copying kinematic_mpc/__init__.py -> /home/sdc6/f1tenth_ws/build/kinematic_mpc/build/lib/kinematic_mpc
+[3.121s] copying kinematic_mpc/kinematic_nmpc_node_soft_min.py -> /home/sdc6/f1tenth_ws/build/kinematic_mpc/build/lib/kinematic_mpc
+[3.122s] copying kinematic_mpc/kinematic_mpc_node_Astar.py -> /home/sdc6/f1tenth_ws/build/kinematic_mpc/build/lib/kinematic_mpc
+[3.123s] copying kinematic_mpc/trajectory_creator.py -> /home/sdc6/f1tenth_ws/build/kinematic_mpc/build/lib/kinematic_mpc
+[3.123s] copying kinematic_mpc/kinematic_mpc_node_soft_min.py -> /home/sdc6/f1tenth_ws/build/kinematic_mpc/build/lib/kinematic_mpc
+[3.124s] running install
+[3.124s] running install_lib
+[3.126s] creating /home/sdc6/f1tenth_ws/install/kinematic_mpc/lib/python3.10/site-packages/kinematic_mpc
+[3.126s] copying /home/sdc6/f1tenth_ws/build/kinematic_mpc/build/lib/kinematic_mpc/utils.py -> /home/sdc6/f1tenth_ws/install/kinematic_mpc/lib/python3.10/site-packages/kinematic_mpc
+[3.126s] copying /home/sdc6/f1tenth_ws/build/kinematic_mpc/build/lib/kinematic_mpc/kinematic_mpc_node_cbf.py -> /home/sdc6/f1tenth_ws/install/kinematic_mpc/lib/python3.10/site-packages/kinematic_mpc
+[3.127s] copying /home/sdc6/f1tenth_ws/build/kinematic_mpc/build/lib/kinematic_mpc/kinematic_mpc_node.py -> /home/sdc6/f1tenth_ws/install/kinematic_mpc/lib/python3.10/site-packages/kinematic_mpc
+[3.127s] copying /home/sdc6/f1tenth_ws/build/kinematic_mpc/build/lib/kinematic_mpc/__init__.py -> /home/sdc6/f1tenth_ws/install/kinematic_mpc/lib/python3.10/site-packages/kinematic_mpc
+[3.127s] copying /home/sdc6/f1tenth_ws/build/kinematic_mpc/build/lib/kinematic_mpc/kinematic_nmpc_node_soft_min.py -> /home/sdc6/f1tenth_ws/install/kinematic_mpc/lib/python3.10/site-packages/kinematic_mpc
+[3.127s] copying /home/sdc6/f1tenth_ws/build/kinematic_mpc/build/lib/kinematic_mpc/kinematic_mpc_node_Astar.py -> /home/sdc6/f1tenth_ws/install/kinematic_mpc/lib/python3.10/site-packages/kinematic_mpc
+[3.128s] copying /home/sdc6/f1tenth_ws/build/kinematic_mpc/build/lib/kinematic_mpc/trajectory_creator.py -> /home/sdc6/f1tenth_ws/install/kinematic_mpc/lib/python3.10/site-packages/kinematic_mpc
+[3.128s] copying /home/sdc6/f1tenth_ws/build/kinematic_mpc/build/lib/kinematic_mpc/kinematic_mpc_node_soft_min.py -> /home/sdc6/f1tenth_ws/install/kinematic_mpc/lib/python3.10/site-packages/kinematic_mpc
+[3.129s] byte-compiling /home/sdc6/f1tenth_ws/install/kinematic_mpc/lib/python3.10/site-packages/kinematic_mpc/utils.py to utils.cpython-310.pyc
+[3.130s] byte-compiling /home/sdc6/f1tenth_ws/install/kinematic_mpc/lib/python3.10/site-packages/kinematic_mpc/kinematic_mpc_node_cbf.py to kinematic_mpc_node_cbf.cpython-310.pyc
+[3.139s] byte-compiling /home/sdc6/f1tenth_ws/install/kinematic_mpc/lib/python3.10/site-packages/kinematic_mpc/kinematic_mpc_node.py to kinematic_mpc_node.cpython-310.pyc
+[3.146s] byte-compiling /home/sdc6/f1tenth_ws/install/kinematic_mpc/lib/python3.10/site-packages/kinematic_mpc/__init__.py to __init__.cpython-310.pyc
+[3.146s] byte-compiling /home/sdc6/f1tenth_ws/install/kinematic_mpc/lib/python3.10/site-packages/kinematic_mpc/kinematic_nmpc_node_soft_min.py to kinematic_nmpc_node_soft_min.cpython-310.pyc
+[3.158s] byte-compiling /home/sdc6/f1tenth_ws/install/kinematic_mpc/lib/python3.10/site-packages/kinematic_mpc/kinematic_mpc_node_Astar.py to kinematic_mpc_node_Astar.cpython-310.pyc
+[3.173s] byte-compiling /home/sdc6/f1tenth_ws/install/kinematic_mpc/lib/python3.10/site-packages/kinematic_mpc/trajectory_creator.py to trajectory_creator.cpython-310.pyc
+[3.175s] byte-compiling /home/sdc6/f1tenth_ws/install/kinematic_mpc/lib/python3.10/site-packages/kinematic_mpc/kinematic_mpc_node_soft_min.py to kinematic_mpc_node_soft_min.cpython-310.pyc
+[3.183s] running install_data
+[3.183s] creating /home/sdc6/f1tenth_ws/install/kinematic_mpc/share/ament_index
+[3.184s] creating /home/sdc6/f1tenth_ws/install/kinematic_mpc/share/ament_index/resource_index
+[3.184s] creating /home/sdc6/f1tenth_ws/install/kinematic_mpc/share/ament_index/resource_index/packages
+[3.184s] copying resource/kinematic_mpc -> /home/sdc6/f1tenth_ws/install/kinematic_mpc/share/ament_index/resource_index/packages
+[3.184s] copying package.xml -> /home/sdc6/f1tenth_ws/install/kinematic_mpc/share/kinematic_mpc
+[3.184s] running install_egg_info
+[3.189s] Copying ../../build/kinematic_mpc/kinematic_mpc.egg-info to /home/sdc6/f1tenth_ws/install/kinematic_mpc/lib/python3.10/site-packages/kinematic_mpc-0.0.0-py3.10.egg-info
+[3.191s] running install_scripts
+[3.234s] writing list of installed files to '/home/sdc6/f1tenth_ws/build/kinematic_mpc/install.log'
+[3.315s] Invoked command in '/home/sdc6/f1tenth_ws/src/f1tenth_mpc' returned '0': PS1=(test_env) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/sdc6/f1tenth_ws/build/kinematic_mpc/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sdc6/f1tenth_ws/install/kinematic_mpc/lib/python3.10/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(test_env) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/kinematic_mpc build --build-base /home/sdc6/f1tenth_ws/build/kinematic_mpc/build install --record /home/sdc6/f1tenth_ws/build/kinematic_mpc/install.log --install-scripts $base/lib/kinematic_mpc --single-version-externally-managed install_data

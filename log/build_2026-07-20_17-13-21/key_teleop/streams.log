@@ -1,0 +1,22 @@
+[2.374s] Invoking command in '/home/sdc6/f1tenth_ws/src/f1tenth_system/teleop_tools/key_teleop': PS1=(test_env) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/sdc6/f1tenth_ws/build/key_teleop/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sdc6/f1tenth_ws/install/key_teleop/lib/python3.10/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(test_env) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../../build/key_teleop build --build-base /home/sdc6/f1tenth_ws/build/key_teleop/build install --record /home/sdc6/f1tenth_ws/build/key_teleop/install.log --single-version-externally-managed install_data
+[3.078s] running egg_info
+[3.080s] writing ../../../../build/key_teleop/key_teleop.egg-info/PKG-INFO
+[3.081s] writing dependency_links to ../../../../build/key_teleop/key_teleop.egg-info/dependency_links.txt
+[3.081s] writing entry points to ../../../../build/key_teleop/key_teleop.egg-info/entry_points.txt
+[3.081s] writing requirements to ../../../../build/key_teleop/key_teleop.egg-info/requires.txt
+[3.082s] writing top-level names to ../../../../build/key_teleop/key_teleop.egg-info/top_level.txt
+[3.087s] reading manifest file '../../../../build/key_teleop/key_teleop.egg-info/SOURCES.txt'
+[3.087s] adding license file 'LICENSE'
+[3.088s] writing manifest file '../../../../build/key_teleop/key_teleop.egg-info/SOURCES.txt'
+[3.089s] running build
+[3.089s] running build_py
+[3.095s] running install
+[3.096s] running install_lib
+[3.100s] running install_data
+[3.101s] running install_egg_info
+[3.105s] removing '/home/sdc6/f1tenth_ws/install/key_teleop/lib/python3.10/site-packages/key_teleop-0.3.0-py3.10.egg-info' (and everything under it)
+[3.106s] Copying ../../../../build/key_teleop/key_teleop.egg-info to /home/sdc6/f1tenth_ws/install/key_teleop/lib/python3.10/site-packages/key_teleop-0.3.0-py3.10.egg-info
+[3.108s] running install_scripts
+[3.155s] Installing key_teleop script to /home/sdc6/f1tenth_ws/install/key_teleop/lib/key_teleop
+[3.156s] writing list of installed files to '/home/sdc6/f1tenth_ws/build/key_teleop/install.log'
+[3.249s] Invoked command in '/home/sdc6/f1tenth_ws/src/f1tenth_system/teleop_tools/key_teleop' returned '0': PS1=(test_env) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/sdc6/f1tenth_ws/build/key_teleop/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sdc6/f1tenth_ws/install/key_teleop/lib/python3.10/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(test_env) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../../build/key_teleop build --build-base /home/sdc6/f1tenth_ws/build/key_teleop/build install --record /home/sdc6/f1tenth_ws/build/key_teleop/install.log --single-version-externally-managed install_data

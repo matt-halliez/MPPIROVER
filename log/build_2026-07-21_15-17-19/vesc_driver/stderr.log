@@ -1,0 +1,88 @@
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/sdc6/f1tenth_ws/src/f1tenth_system/vesc/vesc_driver/include/vesc_driver/vesc_driver.hpp:38[m[K,
+                 from [01m[K/home/sdc6/f1tenth_ws/src/f1tenth_system/vesc/vesc_driver/src/vesc_driver.cpp:31[m[K:
+[01m[K/home/sdc6/f1tenth_ws/src/f1tenth_system/vesc/vesc_driver/src/vesc_driver.cpp:[m[K In member function ‘[01m[Kdouble vesc_driver::VescDriver::CommandLimit::clip(double)[m[K’:
+[01m[K/home/sdc6/f1tenth_ws/src/f1tenth_system/vesc/vesc_driver/src/vesc_driver.cpp:429:5:[m[K [01;31m[Kerror: [m[Kstatic assertion failed: First argument to logging macros must be an rclcpp::Logger
+  429 |     [01;31m[KRCLCPP_INFO_THROTTLE[m[K(
+      |     [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/sdc6/f1tenth_ws/src/f1tenth_system/vesc/vesc_driver/src/vesc_driver.cpp:[m[K In lambda function:
+[01m[K/home/sdc6/f1tenth_ws/src/f1tenth_system/vesc/vesc_driver/src/vesc_driver.cpp:429:5:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Know[m[K’ in ‘[01m[Kc[m[K’, which is of non-class type ‘[01m[Kdouble[m[K’
+  429 |     [01;31m[KRCLCPP_INFO_THROTTLE[m[K(
+      |     [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/sdc6/f1tenth_ws/src/f1tenth_system/vesc/vesc_driver/include/vesc_driver/vesc_driver.hpp:38[m[K,
+                 from [01m[K/home/sdc6/f1tenth_ws/src/f1tenth_system/vesc/vesc_driver/src/vesc_driver.cpp:31[m[K:
+[01m[K/home/sdc6/f1tenth_ws/src/f1tenth_system/vesc/vesc_driver/src/vesc_driver.cpp:[m[K In member function ‘[01m[Kdouble vesc_driver::VescDriver::CommandLimit::clip(double)[m[K’:
+[01m[K/home/sdc6/f1tenth_ws/src/f1tenth_system/vesc/vesc_driver/src/vesc_driver.cpp:429:5:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kget_name[m[K’ in ‘[01m[K((vesc_driver::VescDriver::CommandLimit*)this)->vesc_driver::VescDriver::CommandLimit::name.std::__cxx11::basic_string<char>::c_str()[m[K’, which is of non-class type ‘[01m[Kconst char*[m[K’
+  429 |     [01;31m[KRCLCPP_INFO_THROTTLE[m[K(
+      |     [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/sdc6/f1tenth_ws/src/f1tenth_system/vesc/vesc_driver/src/vesc_driver.cpp:429:5:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kget_name[m[K’ in ‘[01m[K((vesc_driver::VescDriver::CommandLimit*)this)->vesc_driver::VescDriver::CommandLimit::name.std::__cxx11::basic_string<char>::c_str()[m[K’, which is of non-class type ‘[01m[Kconst char*[m[K’
+  429 |     [01;31m[KRCLCPP_INFO_THROTTLE[m[K(
+      |     [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/sdc6/f1tenth_ws/src/f1tenth_system/vesc/vesc_driver/src/vesc_driver.cpp:429:5:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K)[m[K’ token
+  429 |     [01;31m[KRCLCPP_INFO_THROTTLE[m[K(
+      |     [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/sdc6/f1tenth_ws/src/f1tenth_system/vesc/vesc_driver/include/vesc_driver/vesc_driver.hpp:38[m[K,
+                 from [01m[K/home/sdc6/f1tenth_ws/src/f1tenth_system/vesc/vesc_driver/src/vesc_driver.cpp:31[m[K:
+[01m[K/home/sdc6/f1tenth_ws/src/f1tenth_system/vesc/vesc_driver/src/vesc_driver.cpp:435:5:[m[K [01;31m[Kerror: [m[Kstatic assertion failed: First argument to logging macros must be an rclcpp::Logger
+  435 |     [01;31m[KRCLCPP_INFO_THROTTLE[m[K(
+      |     [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/sdc6/f1tenth_ws/src/f1tenth_system/vesc/vesc_driver/src/vesc_driver.cpp:[m[K In lambda function:
+[01m[K/home/sdc6/f1tenth_ws/src/f1tenth_system/vesc/vesc_driver/src/vesc_driver.cpp:435:5:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Know[m[K’ in ‘[01m[Kc[m[K’, which is of non-class type ‘[01m[Kdouble[m[K’
+  435 |     [01;31m[KRCLCPP_INFO_THROTTLE[m[K(
+      |     [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/sdc6/f1tenth_ws/src/f1tenth_system/vesc/vesc_driver/include/vesc_driver/vesc_driver.hpp:38[m[K,
+                 from [01m[K/home/sdc6/f1tenth_ws/src/f1tenth_system/vesc/vesc_driver/src/vesc_driver.cpp:31[m[K:
+[01m[K/home/sdc6/f1tenth_ws/src/f1tenth_system/vesc/vesc_driver/src/vesc_driver.cpp:[m[K In member function ‘[01m[Kdouble vesc_driver::VescDriver::CommandLimit::clip(double)[m[K’:
+[01m[K/home/sdc6/f1tenth_ws/src/f1tenth_system/vesc/vesc_driver/src/vesc_driver.cpp:435:5:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kget_name[m[K’ in ‘[01m[K((vesc_driver::VescDriver::CommandLimit*)this)->vesc_driver::VescDriver::CommandLimit::name.std::__cxx11::basic_string<char>::c_str()[m[K’, which is of non-class type ‘[01m[Kconst char*[m[K’
+  435 |     [01;31m[KRCLCPP_INFO_THROTTLE[m[K(
+      |     [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/sdc6/f1tenth_ws/src/f1tenth_system/vesc/vesc_driver/src/vesc_driver.cpp:435:5:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kget_name[m[K’ in ‘[01m[K((vesc_driver::VescDriver::CommandLimit*)this)->vesc_driver::VescDriver::CommandLimit::name.std::__cxx11::basic_string<char>::c_str()[m[K’, which is of non-class type ‘[01m[Kconst char*[m[K’
+  435 |     [01;31m[KRCLCPP_INFO_THROTTLE[m[K(
+      |     [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/sdc6/f1tenth_ws/src/f1tenth_system/vesc/vesc_driver/src/vesc_driver.cpp:435:5:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K)[m[K’ token
+  435 |     [01;31m[KRCLCPP_INFO_THROTTLE[m[K(
+      |     [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/vesc_driver.dir/build.make:76: CMakeFiles/vesc_driver.dir/src/vesc_driver.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:141: CMakeFiles/vesc_driver.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

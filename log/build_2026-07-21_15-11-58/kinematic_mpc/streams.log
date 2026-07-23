@@ -1,0 +1,24 @@
+[2.941s] Invoking command in '/home/sdc6/f1tenth_ws/src/f1tenth_mpc': PS1=(test_env) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/sdc6/f1tenth_ws/build/kinematic_mpc/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sdc6/f1tenth_ws/install/kinematic_mpc/lib/python3.10/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(test_env) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/kinematic_mpc build --build-base /home/sdc6/f1tenth_ws/build/kinematic_mpc/build install --record /home/sdc6/f1tenth_ws/build/kinematic_mpc/install.log --install-scripts $base/lib/kinematic_mpc --single-version-externally-managed install_data
+[3.515s] /usr/lib/python3/dist-packages/setuptools/dist.py:723: UserWarning: Usage of dash-separated 'script-dir' will not be supported in future versions. Please use the underscore name 'script_dir' instead
+[3.515s]   warnings.warn(
+[3.540s] running egg_info
+[3.542s] writing ../../build/kinematic_mpc/kinematic_mpc.egg-info/PKG-INFO
+[3.544s] writing dependency_links to ../../build/kinematic_mpc/kinematic_mpc.egg-info/dependency_links.txt
+[3.544s] writing entry points to ../../build/kinematic_mpc/kinematic_mpc.egg-info/entry_points.txt
+[3.545s] writing requirements to ../../build/kinematic_mpc/kinematic_mpc.egg-info/requires.txt
+[3.546s] writing top-level names to ../../build/kinematic_mpc/kinematic_mpc.egg-info/top_level.txt
+[3.551s] reading manifest file '../../build/kinematic_mpc/kinematic_mpc.egg-info/SOURCES.txt'
+[3.553s] writing manifest file '../../build/kinematic_mpc/kinematic_mpc.egg-info/SOURCES.txt'
+[3.554s] running build
+[3.554s] running build_py
+[3.556s] copying kinematic_mpc/trajectory_creator.py -> /home/sdc6/f1tenth_ws/build/kinematic_mpc/build/lib/kinematic_mpc
+[3.557s] running install
+[3.559s] running install_lib
+[3.561s] copying /home/sdc6/f1tenth_ws/build/kinematic_mpc/build/lib/kinematic_mpc/trajectory_creator.py -> /home/sdc6/f1tenth_ws/install/kinematic_mpc/lib/python3.10/site-packages/kinematic_mpc
+[3.564s] byte-compiling /home/sdc6/f1tenth_ws/install/kinematic_mpc/lib/python3.10/site-packages/kinematic_mpc/trajectory_creator.py to trajectory_creator.cpython-310.pyc
+[3.568s] running install_data
+[3.569s] running install_egg_info
+[3.601s] removing '/home/sdc6/f1tenth_ws/install/kinematic_mpc/lib/python3.10/site-packages/kinematic_mpc-0.0.0-py3.10.egg-info' (and everything under it)
+[3.606s] Copying ../../build/kinematic_mpc/kinematic_mpc.egg-info to /home/sdc6/f1tenth_ws/install/kinematic_mpc/lib/python3.10/site-packages/kinematic_mpc-0.0.0-py3.10.egg-info
+[3.614s] running install_scripts
+[3.665s] writing list of installed files to '/home/sdc6/f1tenth_ws/build/kinematic_mpc/install.log'

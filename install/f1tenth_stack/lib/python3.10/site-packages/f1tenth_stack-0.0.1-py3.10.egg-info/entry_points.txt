@@ -1,0 +1,3 @@
+[console_scripts]
+throttle_interpolator = f1tenth_stack.throttle_interpolator:main
+

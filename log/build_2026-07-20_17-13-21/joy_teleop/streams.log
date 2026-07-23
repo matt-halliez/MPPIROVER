@@ -1,0 +1,21 @@
+[1.505s] Invoking command in '/home/sdc6/f1tenth_ws/src/f1tenth_system/teleop_tools/joy_teleop': CMAKE_PREFIX_PATH=/home/sdc6/f1tenth_ws/install/teleop_tools_msgs:/home/sdc6/f1tenth_ws/install/vesc:/home/sdc6/f1tenth_ws/install/vesc_driver:/home/sdc6/f1tenth_ws/install/vesc_ackermann:/home/sdc6/f1tenth_ws/install/vesc_msgs:/home/sdc6/f1tenth_ws/install/teleop_tools:/home/sdc6/f1tenth_ws/install/ackermann_mux LD_LIBRARY_PATH=/home/sdc6/f1tenth_ws/install/teleop_tools_msgs/lib:/home/sdc6/f1tenth_ws/install/vesc_driver/lib:/home/sdc6/f1tenth_ws/install/vesc_ackermann/lib:/home/sdc6/f1tenth_ws/install/vesc_msgs/lib:/usr/local/cuda/lib64:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/usr/local/cuda-12.6/lib64 PS1=(test_env) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/sdc6/f1tenth_ws/build/joy_teleop/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sdc6/f1tenth_ws/install/joy_teleop/lib/python3.10/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(test_env) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../../build/joy_teleop build --build-base /home/sdc6/f1tenth_ws/build/joy_teleop/build install --record /home/sdc6/f1tenth_ws/build/joy_teleop/install.log --single-version-externally-managed install_data
+[2.012s] running egg_info
+[2.013s] writing ../../../../build/joy_teleop/joy_teleop.egg-info/PKG-INFO
+[2.016s] writing dependency_links to ../../../../build/joy_teleop/joy_teleop.egg-info/dependency_links.txt
+[2.017s] writing entry points to ../../../../build/joy_teleop/joy_teleop.egg-info/entry_points.txt
+[2.017s] writing requirements to ../../../../build/joy_teleop/joy_teleop.egg-info/requires.txt
+[2.017s] writing top-level names to ../../../../build/joy_teleop/joy_teleop.egg-info/top_level.txt
+[2.021s] reading manifest file '../../../../build/joy_teleop/joy_teleop.egg-info/SOURCES.txt'
+[2.023s] writing manifest file '../../../../build/joy_teleop/joy_teleop.egg-info/SOURCES.txt'
+[2.023s] running build
+[2.023s] running build_py
+[2.024s] running install
+[2.025s] running install_lib
+[2.027s] running install_data
+[2.028s] running install_egg_info
+[2.031s] removing '/home/sdc6/f1tenth_ws/install/joy_teleop/lib/python3.10/site-packages/joy_teleop-0.3.0-py3.10.egg-info' (and everything under it)
+[2.032s] Copying ../../../../build/joy_teleop/joy_teleop.egg-info to /home/sdc6/f1tenth_ws/install/joy_teleop/lib/python3.10/site-packages/joy_teleop-0.3.0-py3.10.egg-info
+[2.034s] running install_scripts
+[2.076s] Installing incrementer_server script to /home/sdc6/f1tenth_ws/install/joy_teleop/lib/joy_teleop
+[2.077s] Installing joy_teleop script to /home/sdc6/f1tenth_ws/install/joy_teleop/lib/joy_teleop
+[2.077s] writing list of installed files to '/home/sdc6/f1tenth_ws/build/joy_teleop/install.log'

@@ -1,0 +1,38 @@
+[0.054s] Invoking command in '/home/sdc6/f1tenth_ws/build/ackermann_mux': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/sdc6/f1tenth_ws/install/f1tenth_stack:/home/sdc6/f1tenth_ws/install/joy_teleop:/home/sdc6/f1tenth_ws/install/mouse_teleop:/home/sdc6/f1tenth_ws/install/key_teleop:/opt/ros/humble PS1=(test_env) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ VIRTUAL_ENV_PROMPT=(test_env) /usr/bin/cmake --build /home/sdc6/f1tenth_ws/build/ackermann_mux -- -j6 -l6
+[1.175s] [100%] Built target ackermann_mux
+[1.704s] Invoked command in '/home/sdc6/f1tenth_ws/build/ackermann_mux' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/sdc6/f1tenth_ws/install/f1tenth_stack:/home/sdc6/f1tenth_ws/install/joy_teleop:/home/sdc6/f1tenth_ws/install/mouse_teleop:/home/sdc6/f1tenth_ws/install/key_teleop:/opt/ros/humble PS1=(test_env) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ VIRTUAL_ENV_PROMPT=(test_env) /usr/bin/cmake --build /home/sdc6/f1tenth_ws/build/ackermann_mux -- -j6 -l6
+[1.728s] Invoking command in '/home/sdc6/f1tenth_ws/build/ackermann_mux': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/sdc6/f1tenth_ws/install/f1tenth_stack:/home/sdc6/f1tenth_ws/install/joy_teleop:/home/sdc6/f1tenth_ws/install/mouse_teleop:/home/sdc6/f1tenth_ws/install/key_teleop:/opt/ros/humble PS1=(test_env) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ VIRTUAL_ENV_PROMPT=(test_env) /usr/bin/cmake --install /home/sdc6/f1tenth_ws/build/ackermann_mux
+[1.747s] -- Install configuration: ""
+[1.747s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/ackermann_mux/lib/ackermann_mux/ackermann_mux
+[1.748s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/ackermann_mux/share/ackermann_mux/launch
+[1.748s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/ackermann_mux/share/ackermann_mux/launch/ackermann_mux_launch.py
+[1.748s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/ackermann_mux/share/ackermann_mux/config
+[1.748s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/ackermann_mux/share/ackermann_mux/config/ackermann_mux_topics.yaml
+[1.748s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/ackermann_mux/share/ackermann_mux/config/ackermann_mux_locks.yaml
+[1.749s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/ackermann_mux/share/ackermann_mux/config/joystick.yaml
+[1.749s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/ackermann_mux/include
+[1.749s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/ackermann_mux/include/ackermann_mux
+[1.749s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/ackermann_mux/include/ackermann_mux/ackermann_mux.hpp
+[1.749s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/ackermann_mux/include/ackermann_mux/topic_handle.hpp
+[1.749s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/ackermann_mux/include/ackermann_mux/ackermann_mux_diagnostics_status.hpp
+[1.749s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/ackermann_mux/include/ackermann_mux/utils.hpp
+[1.750s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/ackermann_mux/include/ackermann_mux/ackermann_mux_diagnostics.hpp
+[1.750s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/ackermann_mux/include/ackermann_mux/params_helpers.hpp
+[1.750s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/ackermann_mux/share/ament_index/resource_index/package_run_dependencies/ackermann_mux
+[1.751s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/ackermann_mux/share/ament_index/resource_index/parent_prefix_path/ackermann_mux
+[1.751s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/ackermann_mux/share/ackermann_mux/environment/ament_prefix_path.sh
+[1.751s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/ackermann_mux/share/ackermann_mux/environment/ament_prefix_path.dsv
+[1.751s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/ackermann_mux/share/ackermann_mux/environment/path.sh
+[1.751s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/ackermann_mux/share/ackermann_mux/environment/path.dsv
+[1.752s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/ackermann_mux/share/ackermann_mux/local_setup.bash
+[1.753s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/ackermann_mux/share/ackermann_mux/local_setup.sh
+[1.761s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/ackermann_mux/share/ackermann_mux/local_setup.zsh
+[1.762s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/ackermann_mux/share/ackermann_mux/local_setup.dsv
+[1.762s] -- Installing: /home/sdc6/f1tenth_ws/install/ackermann_mux/share/ackermann_mux/package.dsv
+[1.762s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/ackermann_mux/share/ament_index/resource_index/packages/ackermann_mux
+[1.762s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/ackermann_mux/share/ackermann_mux/cmake/ament_cmake_export_include_directories-extras.cmake
+[1.762s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/ackermann_mux/share/ackermann_mux/cmake/ament_cmake_export_dependencies-extras.cmake
+[1.762s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/ackermann_mux/share/ackermann_mux/cmake/ackermann_muxConfig.cmake
+[1.762s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/ackermann_mux/share/ackermann_mux/cmake/ackermann_muxConfig-version.cmake
+[1.762s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/ackermann_mux/share/ackermann_mux/package.xml
+[1.813s] Invoked command in '/home/sdc6/f1tenth_ws/build/ackermann_mux' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/sdc6/f1tenth_ws/install/f1tenth_stack:/home/sdc6/f1tenth_ws/install/joy_teleop:/home/sdc6/f1tenth_ws/install/mouse_teleop:/home/sdc6/f1tenth_ws/install/key_teleop:/opt/ros/humble PS1=(test_env) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ VIRTUAL_ENV_PROMPT=(test_env) /usr/bin/cmake --install /home/sdc6/f1tenth_ws/build/ackermann_mux

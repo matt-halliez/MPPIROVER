@@ -1,0 +1,56 @@
+[0.013s] Invoking command in '/home/sdc6/f1tenth_ws/build/vesc_driver': AMENT_PREFIX_PATH=/home/sdc6/f1tenth_ws/install/vesc_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sdc6/f1tenth_ws/install/vesc_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/sdc6/f1tenth_ws/install/vesc_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/usr/local/cuda-12.6/lib64 PYTHONPATH=/home/sdc6/f1tenth_ws/install/vesc_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/sdc6/f1tenth_ws/src/f1tenth_system/vesc/vesc_driver -DCMAKE_INSTALL_PREFIX=/home/sdc6/f1tenth_ws/install/vesc_driver
+[0.126s] -- The C compiler identification is GNU 11.4.0
+[0.222s] -- The CXX compiler identification is GNU 11.4.0
+[0.234s] -- Detecting C compiler ABI info
+[0.373s] -- Detecting C compiler ABI info - done
+[0.375s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.376s] -- Detecting C compile features
+[0.377s] -- Detecting C compile features - done
+[0.383s] -- Detecting CXX compiler ABI info
+[0.522s] -- Detecting CXX compiler ABI info - done
+[0.533s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.533s] -- Detecting CXX compile features
+[0.534s] -- Detecting CXX compile features - done
+[0.537s] -- Found ament_cmake_auto: 1.3.14 (/opt/ros/humble/share/ament_cmake_auto/cmake)
+[0.845s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[1.266s] -- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[1.273s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.287s] -- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[1.306s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.332s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.401s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[1.405s] -- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[1.532s] -- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[1.574s] -- Found FastRTPS: /opt/ros/humble/include  
+[1.640s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.654s] -- Looking for pthread.h
+[1.777s] -- Looking for pthread.h - found
+[1.777s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.911s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[1.914s] -- Found Threads: TRUE  
+[2.162s] [31mCMake Error at /opt/ros/humble/share/io_context/cmake/io_context-extras.cmake:17 (find_package):
+[2.162s]   By not providing "Findasio_cmake_module.cmake" in CMAKE_MODULE_PATH this
+[2.162s]   project has asked CMake to find a package configuration file provided by
+[2.162s]   "asio_cmake_module", but CMake did not find one.
+[2.162s] 
+[2.162s]   Could not find a package configuration file provided by "asio_cmake_module"
+[2.162s]   with any of the following names:
+[2.162s] 
+[2.163s]     asio_cmake_moduleConfig.cmake
+[2.163s]     asio_cmake_module-config.cmake
+[2.163s] 
+[2.163s]   Add the installation prefix of "asio_cmake_module" to CMAKE_PREFIX_PATH or
+[2.163s]   set "asio_cmake_module_DIR" to a directory containing one of the above
+[2.163s]   files.  If "asio_cmake_module" provides a separate development package or
+[2.163s]   SDK, be sure it has been installed.
+[2.163s] Call Stack (most recent call first):
+[2.163s]   /opt/ros/humble/share/io_context/cmake/io_contextConfig.cmake:41 (include)
+[2.163s]   /opt/ros/humble/share/serial_driver/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)
+[2.163s]   /opt/ros/humble/share/serial_driver/cmake/serial_driverConfig.cmake:41 (include)
+[2.164s]   /opt/ros/humble/share/ament_cmake_auto/cmake/ament_auto_find_build_dependencies.cmake:67 (find_package)
+[2.164s]   CMakeLists.txt:14 (ament_auto_find_build_dependencies)
+[2.164s] 
+[2.164s] [0m
+[2.164s] -- Configuring incomplete, errors occurred!
+[2.164s] See also "/home/sdc6/f1tenth_ws/build/vesc_driver/CMakeFiles/CMakeOutput.log".
+[2.187s] Invoked command in '/home/sdc6/f1tenth_ws/build/vesc_driver' returned '1': AMENT_PREFIX_PATH=/home/sdc6/f1tenth_ws/install/vesc_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sdc6/f1tenth_ws/install/vesc_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/sdc6/f1tenth_ws/install/vesc_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/usr/local/cuda-12.6/lib64 PYTHONPATH=/home/sdc6/f1tenth_ws/install/vesc_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/sdc6/f1tenth_ws/src/f1tenth_system/vesc/vesc_driver -DCMAKE_INSTALL_PREFIX=/home/sdc6/f1tenth_ws/install/vesc_driver

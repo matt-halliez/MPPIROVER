@@ -1,0 +1,21 @@
+[2.440s] Invoking command in '/home/sdc6/f1tenth_ws/src/f1tenth_mpc': PS1=(test_env) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/sdc6/f1tenth_ws/build/kinematic_mpc/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sdc6/f1tenth_ws/install/kinematic_mpc/lib/python3.10/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(test_env) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/kinematic_mpc build --build-base /home/sdc6/f1tenth_ws/build/kinematic_mpc/build install --record /home/sdc6/f1tenth_ws/build/kinematic_mpc/install.log --install-scripts $base/lib/kinematic_mpc --single-version-externally-managed install_data
+[2.959s] /usr/lib/python3/dist-packages/setuptools/dist.py:723: UserWarning: Usage of dash-separated 'script-dir' will not be supported in future versions. Please use the underscore name 'script_dir' instead
+[2.959s]   warnings.warn(
+[2.981s] running egg_info
+[2.984s] writing ../../build/kinematic_mpc/kinematic_mpc.egg-info/PKG-INFO
+[2.984s] writing dependency_links to ../../build/kinematic_mpc/kinematic_mpc.egg-info/dependency_links.txt
+[2.985s] writing entry points to ../../build/kinematic_mpc/kinematic_mpc.egg-info/entry_points.txt
+[2.985s] writing requirements to ../../build/kinematic_mpc/kinematic_mpc.egg-info/requires.txt
+[2.985s] writing top-level names to ../../build/kinematic_mpc/kinematic_mpc.egg-info/top_level.txt
+[2.990s] reading manifest file '../../build/kinematic_mpc/kinematic_mpc.egg-info/SOURCES.txt'
+[2.992s] writing manifest file '../../build/kinematic_mpc/kinematic_mpc.egg-info/SOURCES.txt'
+[2.992s] running build
+[2.992s] running build_py
+[2.993s] running install
+[2.994s] running install_lib
+[2.998s] running install_data
+[2.998s] running install_egg_info
+[3.003s] removing '/home/sdc6/f1tenth_ws/install/kinematic_mpc/lib/python3.10/site-packages/kinematic_mpc-0.0.0-py3.10.egg-info' (and everything under it)
+[3.004s] Copying ../../build/kinematic_mpc/kinematic_mpc.egg-info to /home/sdc6/f1tenth_ws/install/kinematic_mpc/lib/python3.10/site-packages/kinematic_mpc-0.0.0-py3.10.egg-info
+[3.006s] running install_scripts
+[3.057s] writing list of installed files to '/home/sdc6/f1tenth_ws/build/kinematic_mpc/install.log'
