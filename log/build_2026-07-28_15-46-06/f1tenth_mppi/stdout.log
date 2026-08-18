@@ -1,0 +1,66 @@
+-- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found rclcpp: 16.0.19 (/opt/ros/humble/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found rclpy: 3.3.21 (/opt/ros/humble/share/rclpy/cmake)
+-- Found geometry_msgs: 4.9.1 (/opt/ros/humble/share/geometry_msgs/cmake)
+-- Found nav_msgs: 4.9.1 (/opt/ros/humble/share/nav_msgs/cmake)
+-- Found ackermann_msgs: 2.0.2 (/opt/ros/humble/share/ackermann_msgs/cmake)
+-- Found sensor_msgs: 4.9.1 (/opt/ros/humble/share/sensor_msgs/cmake)
+-- Found visualization_msgs: 4.9.1 (/opt/ros/humble/share/visualization_msgs/cmake)
+-- Found tf2_ros: 0.25.20 (/opt/ros/humble/share/tf2_ros/cmake)
+-- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)
+-- Added test 'copyright' to check source files copyright and LICENSE
+-- Added test 'flake8' to check Python code syntax and style conventions
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/sdc6/f1tenth_ws/build/f1tenth_mppi
+Built target ament_cmake_python_copy_f1tenth_mppi_setup
+Built target ament_cmake_python_copy_f1tenth_mppi
+running egg_info
+creating f1tenth_mppi.egg-info
+writing f1tenth_mppi.egg-info/PKG-INFO
+writing dependency_links to f1tenth_mppi.egg-info/dependency_links.txt
+writing top-level names to f1tenth_mppi.egg-info/top_level.txt
+writing manifest file 'f1tenth_mppi.egg-info/SOURCES.txt'
+reading manifest file 'f1tenth_mppi.egg-info/SOURCES.txt'
+writing manifest file 'f1tenth_mppi.egg-info/SOURCES.txt'
+Built target ament_cmake_python_build_f1tenth_mppi_egg
+-- Install configuration: ""
+-- Installing: /home/sdc6/f1tenth_ws/install/f1tenth_mppi/share/f1tenth_mppi/environment/pythonpath.sh
+-- Installing: /home/sdc6/f1tenth_ws/install/f1tenth_mppi/share/f1tenth_mppi/environment/pythonpath.dsv
+-- Installing: /home/sdc6/f1tenth_ws/install/f1tenth_mppi/lib/python3.10/site-packages/f1tenth_mppi-0.0.0-py3.10.egg-info
+-- Installing: /home/sdc6/f1tenth_ws/install/f1tenth_mppi/lib/python3.10/site-packages/f1tenth_mppi-0.0.0-py3.10.egg-info/SOURCES.txt
+-- Installing: /home/sdc6/f1tenth_ws/install/f1tenth_mppi/lib/python3.10/site-packages/f1tenth_mppi-0.0.0-py3.10.egg-info/dependency_links.txt
+-- Installing: /home/sdc6/f1tenth_ws/install/f1tenth_mppi/lib/python3.10/site-packages/f1tenth_mppi-0.0.0-py3.10.egg-info/top_level.txt
+-- Installing: /home/sdc6/f1tenth_ws/install/f1tenth_mppi/lib/python3.10/site-packages/f1tenth_mppi-0.0.0-py3.10.egg-info/PKG-INFO
+-- Installing: /home/sdc6/f1tenth_ws/install/f1tenth_mppi/lib/python3.10/site-packages/f1tenth_mppi
+-- Installing: /home/sdc6/f1tenth_ws/install/f1tenth_mppi/lib/python3.10/site-packages/f1tenth_mppi/__init__.py
+Listing '/home/sdc6/f1tenth_ws/install/f1tenth_mppi/lib/python3.10/site-packages/f1tenth_mppi'...
+Compiling '/home/sdc6/f1tenth_ws/install/f1tenth_mppi/lib/python3.10/site-packages/f1tenth_mppi/__init__.py'...
+-- Installing: /home/sdc6/f1tenth_ws/install/f1tenth_mppi/lib/f1tenth_mppi/mppi.py
+-- Installing: /home/sdc6/f1tenth_ws/install/f1tenth_mppi/lib/f1tenth_mppi/mppi_node.py
+-- Installing: /home/sdc6/f1tenth_ws/install/f1tenth_mppi/share/ament_index/resource_index/package_run_dependencies/f1tenth_mppi
+-- Installing: /home/sdc6/f1tenth_ws/install/f1tenth_mppi/share/ament_index/resource_index/parent_prefix_path/f1tenth_mppi
+-- Installing: /home/sdc6/f1tenth_ws/install/f1tenth_mppi/share/f1tenth_mppi/environment/ament_prefix_path.sh
+-- Installing: /home/sdc6/f1tenth_ws/install/f1tenth_mppi/share/f1tenth_mppi/environment/ament_prefix_path.dsv
+-- Installing: /home/sdc6/f1tenth_ws/install/f1tenth_mppi/share/f1tenth_mppi/environment/path.sh
+-- Installing: /home/sdc6/f1tenth_ws/install/f1tenth_mppi/share/f1tenth_mppi/environment/path.dsv
+-- Installing: /home/sdc6/f1tenth_ws/install/f1tenth_mppi/share/f1tenth_mppi/local_setup.bash
+-- Installing: /home/sdc6/f1tenth_ws/install/f1tenth_mppi/share/f1tenth_mppi/local_setup.sh
+-- Installing: /home/sdc6/f1tenth_ws/install/f1tenth_mppi/share/f1tenth_mppi/local_setup.zsh
+-- Installing: /home/sdc6/f1tenth_ws/install/f1tenth_mppi/share/f1tenth_mppi/local_setup.dsv
+-- Installing: /home/sdc6/f1tenth_ws/install/f1tenth_mppi/share/f1tenth_mppi/package.dsv
+-- Installing: /home/sdc6/f1tenth_ws/install/f1tenth_mppi/share/ament_index/resource_index/packages/f1tenth_mppi
+-- Installing: /home/sdc6/f1tenth_ws/install/f1tenth_mppi/share/f1tenth_mppi/cmake/f1tenth_mppiConfig.cmake
+-- Installing: /home/sdc6/f1tenth_ws/install/f1tenth_mppi/share/f1tenth_mppi/cmake/f1tenth_mppiConfig-version.cmake
+-- Installing: /home/sdc6/f1tenth_ws/install/f1tenth_mppi/share/f1tenth_mppi/package.xml

@@ -154,6 +154,7 @@
 /home/sdc6/f1tenth_ws/install/vesc_msgs/share/vesc_msgs/cmake/ament_cmake_export_targets-extras.cmake
 /home/sdc6/f1tenth_ws/install/vesc_msgs/share/vesc_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
 /home/sdc6/f1tenth_ws/install/vesc_msgs/share/vesc_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+/home/sdc6/f1tenth_ws/install/vesc_msgs/share/vesc_msgs/cmake/rosidl_cmake_aggregate_target-extras.cmake
 /home/sdc6/f1tenth_ws/install/vesc_msgs/share/vesc_msgs/cmake/vesc_msgsConfig.cmake
 /home/sdc6/f1tenth_ws/install/vesc_msgs/share/vesc_msgs/cmake/vesc_msgsConfig-version.cmake
 /home/sdc6/f1tenth_ws/install/vesc_msgs/share/vesc_msgs/package.xml

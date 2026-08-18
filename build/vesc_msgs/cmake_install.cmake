@@ -640,6 +640,10 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/vesc_msgs/cmake" TYPE FILE FILES "/home/sdc6/f1tenth_ws/build/vesc_msgs/rosidl_cmake/rosidl_cmake_aggregate_target-extras.cmake")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/vesc_msgs/cmake" TYPE FILE FILES
     "/home/sdc6/f1tenth_ws/build/vesc_msgs/ament_cmake_core/vesc_msgsConfig.cmake"
     "/home/sdc6/f1tenth_ws/build/vesc_msgs/ament_cmake_core/vesc_msgsConfig-version.cmake"

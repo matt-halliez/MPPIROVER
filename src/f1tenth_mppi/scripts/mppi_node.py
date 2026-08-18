@@ -1,4 +1,6 @@
 #!/usr/bin/env python3 
+import os
+os.environ["JAX_PLATFORMS"] = "cpu"
 import jax
 import jax.numpy as jnp
 import numpy as np
@@ -10,6 +12,7 @@ from sensor_msgs.msg import LaserScan
 from rclpy.qos import qos_profile_sensor_data
 
 from std_msgs.msg import Float32 
+from std_msgs.msg import Bool 
 import threading
 import math 
 
@@ -478,11 +481,19 @@ class MPPIPlanner(Node):
         self.on_car = False
         #pose_topic = "/pf/viz/inferred_pose" if self.on_car else "/ego_racecar/odom"
         #pose_topic = "/odom"
-        pose_topic = "/optitrack/object_560/pose"
+        
         #self.pose_sub_ = self.create_subscription(PoseStamped if self.on_car else Odometry, pose_topic, self.pose_callback, 1)
         self.normalization_param = np.array(self.config.normalization_param).T
         norm_param = self.normalization_param[0, 7:9]/2
         self.norm_param = norm_param
+
+        self.declare_parameter('self_object_id', 560)
+        self.declare_parameter('other_object_id',561)
+        self.SELF_ID = int(self.get_parameter('self_object_id').value)
+        self.OTHER_ID = int(self.get_parameter('other_object_id').value)
+
+        pose_topic = f"/optitrack/object_560/pose"
+
         
         self.mppi_env = MPPIEnv(self.waypoints, norm_param, self.n_steps, mode = 'ks', DT= self.DT)
         self.mppi = MPPI(self.config,jRNG=self.jRNG, a_noise = 1.0, scan = False)
@@ -497,6 +508,8 @@ class MPPIPlanner(Node):
         self.ref_goal_points_data = self.viz_ref_points()
         self.detect_lock = threading.Lock()
         self.speed_lock = threading.Lock()
+        self.pose_lock = threading.Lock()
+        self.traffic_lock = threading.Lock()
         self.car_should_stop = False
         self.is_stopping_maneuver_active = False 
         self.DETECTION_TRIGGER_DISTANCE = 10.0
@@ -508,12 +521,67 @@ class MPPIPlanner(Node):
         self.MAX_ACCEL = 1.0
         self.brake_trigger_time = None 
         self.brake_trigger_speed = None 
-        self.stop_sign_sub = self.create_subscription(Float32,'/stop_sign/distance',self.stop_sign_distance_callback,1)
+        self.own_pose = None 
+        self.other_car_pose = None 
+        self.CLEAR_DISTANCE_THRESHOLD = 1.25
+        self.MIN_STOP_TIME = 1.0
+
+        self.status_lock = threading.Lock()
+        self.other_stopped = None 
+        self.other_stopped_observed_time = None
+        
+
+        self.stop_sign_sub = self.create_subscription(Float32,'/sdc6/stop_sign/distance',self.stop_sign_distance_callback,1)
         self.pose_sub = self.create_subscription(PoseStamped,pose_topic,self.pose_callback,qos_profile_sensor_data)
         #self.pose_sub = self.create_subscription(Odometry,pose_topic,self.pose_callback,qos_profile_sensor_data)
-        self.odom_sub = self.create_subscription(Odometry,'/optitrack/object_560/odom',self.odom_callback,qos_profile_sensor_data)
+        self.odom_sub = self.create_subscription(Odometry,f'/optitrack/object_560/odom',self.odom_callback,qos_profile_sensor_data)
+        self.traffic_sub = self.create_subscription(PoseStamped, f'optitrack/object_561/pose', self.traffic_pose_callback , qos_profile_sensor_data)
+        self.we_stopped_pub = self.create_publisher(Bool, '/sdc6/stop_sign/we_stopped', 1)
+        self.we_stopped_sub = self.create_subscription(Bool, '/sdc2/stop_sign/we_stopped',self.other_status_callback,1)
         self.ref_speed = 0.8
     
+    def traffic_pose_callback(self, pose_msg):
+        x = pose_msg.pose.position.x
+        y = pose_msg.pose.position.y 
+        with self.traffic_lock:
+            self.other_car_pose = (x,y)
+    
+        
+    def is_intersection_clear(self):    
+        with self.pose_lock:
+            own = self.own_pose
+        with self.traffic_lock:
+            other = self.other_car_pose
+        if own is None or other is None:
+            return False 
+        dist = math.hypot(own[0] - other[0], own[1] - other[1])
+        return dist > self.CLEAR_DISTANCE_THRESHOLD
+
+    def other_status_callback(self,msg):
+        value = msg.data
+        with self.status_lock:
+            if value and not self.other_stopped:
+                self.other_stopped_observed_time = time.time()
+            elif not value:
+                self.other_stopped_observed_time = None 
+            self.other_stopped = value
+
+    def publish_stop_status(self,is_stopped):
+        msg = Bool()
+        msg.data = bool(is_stopped)
+        self.we_stopped_pub.publish(msg)
+
+    def has_priority(self):
+        with self.status_lock:
+            other_stopped = self.other_stopped
+            other_ts = self.other_stopped_observed_time
+        if not other_stopped or other_ts is None or self.stop_start_time is None:
+            return True
+        if abs(self.stop_start_time-other_ts) < 0.05:
+            return self.SELF_ID < self.OTHER_ID
+        return self.stop_start_time < other_ts
+
+
     def odom_callback(self,msg):
         vx = msg.twist.twist.linear.x 
         vy = msg.twist.twist.linear.y 
@@ -530,16 +598,41 @@ class MPPIPlanner(Node):
                 if self.stop_start_time is None:
                     self.stop_start_time = current_time 
                     self.get_logger().info("STOP SIGN WHAT STOP SIGN")
-                elif current_time - self.stop_start_time >= 5.0:
-                    self.get_logger().info("okie we back")
-                    self.car_should_stop = False 
-                    self.is_stopping_maneuver_active = False 
-                    self.stop_start_time = None 
-                    self.planned_stop_time = None 
-                    self.cooldown_until = current_time + 5.0
+                elapsed = current_time - self.stop_start_time
+                with self.pose_lock:
+                    own = self.own_pose
+                with self.traffic_lock:
+                    other = self.other_car_pose
+                clear = self.is_intersection_clear()
+                priority = self.has_priority()
+                dist_str = "n/a"
+                if own is not None and other is not None:
+                    dist_str = f"{math.hypot(own[0]-other[0],own[1]-other[1]):.3f}"
+                with self.status_lock:
+                    other_stopped = self.other_stopped
+                    other_ts = self.other_stopped_observed_time
+                self.get_logger().info(
+                    f"[stop-check] elapsed={elapsed:.2f}s clear={clear} "
+                    f"dist={dist_str} own={own} other={other}"
+                )
+                self.publish_stop_status(True)
+                if clear and priority:
+                    if elapsed >= self.MIN_STOP_TIME:
+                        self.get_logger().info("okie we back")
+                        self.car_should_stop = False 
+                        self.is_stopping_maneuver_active = False 
+                        self.stop_start_time = None 
+                        self.planned_stop_time = None 
+                        self.cooldown_until = current_time + 1.0
+                        self.publish_stop_status(False)
+                elif not clear:
+                    self.get_logger().info("hooooooold")
+                else:
+                    self.get_logger().info("i wait")
                 return 
             if current_time <= self.cooldown_until:
                 return 
+            self.publish_stop_status(False)
             if distance_m >0:
                 self.get_logger().info(f"STOP SIGN IN {distance_m:.2f} eeeek")
                 if (distance_m <= self.DETECTION_TRIGGER_DISTANCE and distance_m > self.TARGET_STOP_DISTANCE and current_time > self.cooldown_until):
@@ -594,6 +687,8 @@ class MPPIPlanner(Node):
         
         start = time.time()
         current_time = time.time()
+        with self.pose_lock:
+            self.own_pose = (pose_msg.pose.position.x, pose_msg.pose.position.y)
         with self.detect_lock:
             if self.car_should_stop:
                 self.drive_msg_.drive.speed = 0.0

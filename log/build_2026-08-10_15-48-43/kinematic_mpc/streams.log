@@ -1,0 +1,28 @@
+[3.204s] Invoking command in '/home/sdc6/f1tenth_ws/src/f1tenth_mpc': PS1=(test_env) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/sdc6/f1tenth_ws/build/kinematic_mpc/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sdc6/f1tenth_ws/install/kinematic_mpc/lib/python3.10/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(test_env) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/kinematic_mpc build --build-base /home/sdc6/f1tenth_ws/build/kinematic_mpc/build install --record /home/sdc6/f1tenth_ws/build/kinematic_mpc/install.log --install-scripts $base/lib/kinematic_mpc --single-version-externally-managed install_data
+[4.049s] /usr/lib/python3/dist-packages/setuptools/dist.py:723: UserWarning: Usage of dash-separated 'script-dir' will not be supported in future versions. Please use the underscore name 'script_dir' instead
+[4.049s]   warnings.warn(
+[4.082s] running egg_info
+[4.107s] writing ../../build/kinematic_mpc/kinematic_mpc.egg-info/PKG-INFO
+[4.108s] writing dependency_links to ../../build/kinematic_mpc/kinematic_mpc.egg-info/dependency_links.txt
+[4.108s] writing entry points to ../../build/kinematic_mpc/kinematic_mpc.egg-info/entry_points.txt
+[4.108s] writing requirements to ../../build/kinematic_mpc/kinematic_mpc.egg-info/requires.txt
+[4.108s] writing top-level names to ../../build/kinematic_mpc/kinematic_mpc.egg-info/top_level.txt
+[4.113s] reading manifest file '../../build/kinematic_mpc/kinematic_mpc.egg-info/SOURCES.txt'
+[4.115s] writing manifest file '../../build/kinematic_mpc/kinematic_mpc.egg-info/SOURCES.txt'
+[4.115s] running build
+[4.115s] running build_py
+[4.116s] copying kinematic_mpc/stopsign.py -> /home/sdc6/f1tenth_ws/build/kinematic_mpc/build/lib/kinematic_mpc
+[4.116s] copying kinematic_mpc/trajectory_creator.py -> /home/sdc6/f1tenth_ws/build/kinematic_mpc/build/lib/kinematic_mpc
+[4.117s] running install
+[4.118s] running install_lib
+[4.136s] copying /home/sdc6/f1tenth_ws/build/kinematic_mpc/build/lib/kinematic_mpc/stopsign.py -> /home/sdc6/f1tenth_ws/install/kinematic_mpc/lib/python3.10/site-packages/kinematic_mpc
+[4.137s] copying /home/sdc6/f1tenth_ws/build/kinematic_mpc/build/lib/kinematic_mpc/trajectory_creator.py -> /home/sdc6/f1tenth_ws/install/kinematic_mpc/lib/python3.10/site-packages/kinematic_mpc
+[4.139s] byte-compiling /home/sdc6/f1tenth_ws/install/kinematic_mpc/lib/python3.10/site-packages/kinematic_mpc/stopsign.py to stopsign.cpython-310.pyc
+[4.143s] byte-compiling /home/sdc6/f1tenth_ws/install/kinematic_mpc/lib/python3.10/site-packages/kinematic_mpc/trajectory_creator.py to trajectory_creator.cpython-310.pyc
+[4.152s] running install_data
+[4.152s] running install_egg_info
+[4.157s] removing '/home/sdc6/f1tenth_ws/install/kinematic_mpc/lib/python3.10/site-packages/kinematic_mpc-0.0.0-py3.10.egg-info' (and everything under it)
+[4.164s] Copying ../../build/kinematic_mpc/kinematic_mpc.egg-info to /home/sdc6/f1tenth_ws/install/kinematic_mpc/lib/python3.10/site-packages/kinematic_mpc-0.0.0-py3.10.egg-info
+[4.175s] running install_scripts
+[4.273s] writing list of installed files to '/home/sdc6/f1tenth_ws/build/kinematic_mpc/install.log'
+[4.372s] Invoked command in '/home/sdc6/f1tenth_ws/src/f1tenth_mpc' returned '0': PS1=(test_env) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/sdc6/f1tenth_ws/build/kinematic_mpc/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sdc6/f1tenth_ws/install/kinematic_mpc/lib/python3.10/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(test_env) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/kinematic_mpc build --build-base /home/sdc6/f1tenth_ws/build/kinematic_mpc/build install --record /home/sdc6/f1tenth_ws/build/kinematic_mpc/install.log --install-scripts $base/lib/kinematic_mpc --single-version-externally-managed install_data

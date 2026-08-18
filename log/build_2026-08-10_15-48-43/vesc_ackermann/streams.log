@@ -1,0 +1,76 @@
+[0.052s] Invoking command in '/home/sdc6/f1tenth_ws/build/vesc_ackermann': CMAKE_PREFIX_PATH=/home/sdc6/f1tenth_ws/install/vesc_msgs:/home/sdc6/f1tenth_ws/install/vesc:/home/sdc6/f1tenth_ws/install/vesc_driver:/home/sdc6/f1tenth_ws/install/vesc_ackermann:/home/sdc6/f1tenth_ws/install/teleop_tools:/home/sdc6/f1tenth_ws/install/teleop_tools_msgs:/home/sdc6/f1tenth_ws/install/f1tenth_mppi:/home/sdc6/f1tenth_ws/install/ackermann_mux:/home/sdc6/f1tenth_ws/install/f1tenth_stack:/home/sdc6/f1tenth_ws/install/joy_teleop:/home/sdc6/f1tenth_ws/install/mouse_teleop:/home/sdc6/f1tenth_ws/install/kinematic_mpc:/home/sdc6/f1tenth_ws/install/key_teleop:/opt/ros/humble LD_LIBRARY_PATH=/home/sdc6/f1tenth_ws/install/vesc_msgs/lib:/home/sdc6/f1tenth_ws/install/vesc_driver/lib:/home/sdc6/f1tenth_ws/install/vesc_ackermann/lib:/home/sdc6/f1tenth_ws/install/teleop_tools_msgs/lib:/usr/local/cuda/lib64:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/usr/local/cuda-12.6/lib64 PS1=(test_env) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ VIRTUAL_ENV_PROMPT=(test_env) /usr/bin/cmake --build /home/sdc6/f1tenth_ws/build/vesc_ackermann -- -j6 -l6
+[0.147s] -- Found ament_cmake_auto: 1.3.14 (/opt/ros/humble/share/ament_cmake_auto/cmake)
+[0.727s] -- Found rosidl_generator_c: 3.1.9 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.732s] -- Found rosidl_adapter: 3.1.9 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.750s] -- Found rosidl_generator_cpp: 3.1.9 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.778s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.812s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.036s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[1.037s] -- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[1.270s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.696s] -- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.706s] [0mIn this package, headers install destination is set to `include` by ament_auto_package. It is recommended to install `include/vesc_ackermann` instead and will be the default behavior of ament_auto_package from ROS 2 Kilted Kaiju. On distributions before Kilted, ament_auto_package behaves the same way when you use USE_SCOPED_HEADER_INSTALL_DIR option.[0m
+[1.720s] -- Added test 'copyright' to check source files copyright and LICENSE
+[1.725s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[1.726s] -- Configured cppcheck include dirs: /home/sdc6/f1tenth_ws/src/f1tenth_system/vesc/vesc_ackermann/include
+[1.726s] -- Configured cppcheck exclude dirs and/or files: 
+[1.727s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[1.727s] -- Configured cpplint exclude dirs and/or files: 
+[1.728s] -- Added test 'lint_cmake' to check CMake code style
+[1.730s] -- Added test 'uncrustify' to check C / C++ code style
+[1.730s] -- Configured uncrustify additional arguments: 
+[1.730s] -- Added test 'xmllint' to check XML markup files
+[1.736s] -- Configuring done
+[1.804s] -- Generating done
+[1.830s] -- Build files have been written to: /home/sdc6/f1tenth_ws/build/vesc_ackermann
+[1.935s] [35m[1mConsolidate compiler generated dependencies of target vesc_ackermann[0m
+[2.011s] [ 14%] [32mBuilding CXX object CMakeFiles/vesc_ackermann.dir/src/ackermann_to_vesc.cpp.o[0m
+[22.068s] [ 28%] [32mBuilding CXX object CMakeFiles/vesc_ackermann.dir/src/vesc_to_odom.cpp.o[0m
+[47.101s] [ 42%] [32m[1mLinking CXX shared library libvesc_ackermann.so[0m
+[49.273s] [ 42%] Built target vesc_ackermann
+[49.295s] [35m[1mConsolidate compiler generated dependencies of target vesc_to_odom_node[0m
+[49.330s] [ 57%] [32mBuilding CXX object CMakeFiles/vesc_to_odom_node.dir/rclcpp_components/node_main_vesc_to_odom_node.cpp.o[0m
+[55.774s] [ 71%] [32m[1mLinking CXX executable vesc_to_odom_node[0m
+[56.010s] [ 71%] Built target vesc_to_odom_node
+[56.031s] [35m[1mConsolidate compiler generated dependencies of target ackermann_to_vesc_node[0m
+[56.065s] [ 85%] [32mBuilding CXX object CMakeFiles/ackermann_to_vesc_node.dir/rclcpp_components/node_main_ackermann_to_vesc_node.cpp.o[0m
+[62.720s] [100%] [32m[1mLinking CXX executable ackermann_to_vesc_node[0m
+[62.959s] [100%] Built target ackermann_to_vesc_node
+[62.983s] Invoked command in '/home/sdc6/f1tenth_ws/build/vesc_ackermann' returned '0': CMAKE_PREFIX_PATH=/home/sdc6/f1tenth_ws/install/vesc_msgs:/home/sdc6/f1tenth_ws/install/vesc:/home/sdc6/f1tenth_ws/install/vesc_driver:/home/sdc6/f1tenth_ws/install/vesc_ackermann:/home/sdc6/f1tenth_ws/install/teleop_tools:/home/sdc6/f1tenth_ws/install/teleop_tools_msgs:/home/sdc6/f1tenth_ws/install/f1tenth_mppi:/home/sdc6/f1tenth_ws/install/ackermann_mux:/home/sdc6/f1tenth_ws/install/f1tenth_stack:/home/sdc6/f1tenth_ws/install/joy_teleop:/home/sdc6/f1tenth_ws/install/mouse_teleop:/home/sdc6/f1tenth_ws/install/kinematic_mpc:/home/sdc6/f1tenth_ws/install/key_teleop:/opt/ros/humble LD_LIBRARY_PATH=/home/sdc6/f1tenth_ws/install/vesc_msgs/lib:/home/sdc6/f1tenth_ws/install/vesc_driver/lib:/home/sdc6/f1tenth_ws/install/vesc_ackermann/lib:/home/sdc6/f1tenth_ws/install/teleop_tools_msgs/lib:/usr/local/cuda/lib64:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/usr/local/cuda-12.6/lib64 PS1=(test_env) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ VIRTUAL_ENV_PROMPT=(test_env) /usr/bin/cmake --build /home/sdc6/f1tenth_ws/build/vesc_ackermann -- -j6 -l6
+[62.986s] Invoking command in '/home/sdc6/f1tenth_ws/build/vesc_ackermann': CMAKE_PREFIX_PATH=/home/sdc6/f1tenth_ws/install/vesc_msgs:/home/sdc6/f1tenth_ws/install/vesc:/home/sdc6/f1tenth_ws/install/vesc_driver:/home/sdc6/f1tenth_ws/install/vesc_ackermann:/home/sdc6/f1tenth_ws/install/teleop_tools:/home/sdc6/f1tenth_ws/install/teleop_tools_msgs:/home/sdc6/f1tenth_ws/install/f1tenth_mppi:/home/sdc6/f1tenth_ws/install/ackermann_mux:/home/sdc6/f1tenth_ws/install/f1tenth_stack:/home/sdc6/f1tenth_ws/install/joy_teleop:/home/sdc6/f1tenth_ws/install/mouse_teleop:/home/sdc6/f1tenth_ws/install/kinematic_mpc:/home/sdc6/f1tenth_ws/install/key_teleop:/opt/ros/humble LD_LIBRARY_PATH=/home/sdc6/f1tenth_ws/install/vesc_msgs/lib:/home/sdc6/f1tenth_ws/install/vesc_driver/lib:/home/sdc6/f1tenth_ws/install/vesc_ackermann/lib:/home/sdc6/f1tenth_ws/install/teleop_tools_msgs/lib:/usr/local/cuda/lib64:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/usr/local/cuda-12.6/lib64 PS1=(test_env) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ VIRTUAL_ENV_PROMPT=(test_env) /usr/bin/cmake --install /home/sdc6/f1tenth_ws/build/vesc_ackermann
+[63.001s] -- Install configuration: ""
+[63.001s] -- Installing: /home/sdc6/f1tenth_ws/install/vesc_ackermann/lib/vesc_ackermann/ackermann_to_vesc_node
+[63.003s] -- Set runtime path of "/home/sdc6/f1tenth_ws/install/vesc_ackermann/lib/vesc_ackermann/ackermann_to_vesc_node" to ""
+[63.003s] -- Installing: /home/sdc6/f1tenth_ws/install/vesc_ackermann/lib/vesc_ackermann/vesc_to_odom_node
+[63.004s] -- Set runtime path of "/home/sdc6/f1tenth_ws/install/vesc_ackermann/lib/vesc_ackermann/vesc_to_odom_node" to ""
+[63.004s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/vesc_ackermann/include
+[63.004s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/vesc_ackermann/include/vesc_ackermann
+[63.005s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/vesc_ackermann/include/vesc_ackermann/vesc_to_odom.hpp
+[63.005s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/vesc_ackermann/include/vesc_ackermann/ackermann_to_vesc.hpp
+[63.005s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/vesc_ackermann/share/vesc_ackermann/environment/library_path.sh
+[63.005s] -- Installing: /home/sdc6/f1tenth_ws/install/vesc_ackermann/share/vesc_ackermann/environment/library_path.dsv
+[63.005s] -- Installing: /home/sdc6/f1tenth_ws/install/vesc_ackermann/lib/libvesc_ackermann.so
+[63.041s] -- Set runtime path of "/home/sdc6/f1tenth_ws/install/vesc_ackermann/lib/libvesc_ackermann.so" to ""
+[63.042s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/vesc_ackermann/share/vesc_ackermann/launch
+[63.042s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/vesc_ackermann/share/vesc_ackermann/launch/ackermann_to_vesc_node.launch.xml
+[63.042s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/vesc_ackermann/share/vesc_ackermann/launch/vesc_to_odom_node.launch.xml
+[63.042s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/vesc_ackermann/share/ament_index/resource_index/package_run_dependencies/vesc_ackermann
+[63.042s] -- Installing: /home/sdc6/f1tenth_ws/install/vesc_ackermann/share/ament_index/resource_index/parent_prefix_path/vesc_ackermann
+[63.042s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/vesc_ackermann/share/vesc_ackermann/environment/ament_prefix_path.sh
+[63.043s] -- Installing: /home/sdc6/f1tenth_ws/install/vesc_ackermann/share/vesc_ackermann/environment/ament_prefix_path.dsv
+[63.043s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/vesc_ackermann/share/vesc_ackermann/environment/path.sh
+[63.043s] -- Installing: /home/sdc6/f1tenth_ws/install/vesc_ackermann/share/vesc_ackermann/environment/path.dsv
+[63.043s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/vesc_ackermann/share/vesc_ackermann/local_setup.bash
+[63.043s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/vesc_ackermann/share/vesc_ackermann/local_setup.sh
+[63.043s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/vesc_ackermann/share/vesc_ackermann/local_setup.zsh
+[63.044s] -- Installing: /home/sdc6/f1tenth_ws/install/vesc_ackermann/share/vesc_ackermann/local_setup.dsv
+[63.044s] -- Installing: /home/sdc6/f1tenth_ws/install/vesc_ackermann/share/vesc_ackermann/package.dsv
+[63.044s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/vesc_ackermann/share/ament_index/resource_index/packages/vesc_ackermann
+[63.044s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/vesc_ackermann/share/ament_index/resource_index/rclcpp_components/vesc_ackermann
+[63.044s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/vesc_ackermann/share/vesc_ackermann/cmake/ament_cmake_export_dependencies-extras.cmake
+[63.044s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/vesc_ackermann/share/vesc_ackermann/cmake/ament_cmake_export_include_directories-extras.cmake
+[63.045s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/vesc_ackermann/share/vesc_ackermann/cmake/ament_cmake_export_libraries-extras.cmake
+[63.045s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/vesc_ackermann/share/vesc_ackermann/cmake/vesc_ackermannConfig.cmake
+[63.045s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/vesc_ackermann/share/vesc_ackermann/cmake/vesc_ackermannConfig-version.cmake
+[63.045s] -- Up-to-date: /home/sdc6/f1tenth_ws/install/vesc_ackermann/share/vesc_ackermann/package.xml
+[63.049s] Invoked command in '/home/sdc6/f1tenth_ws/build/vesc_ackermann' returned '0': CMAKE_PREFIX_PATH=/home/sdc6/f1tenth_ws/install/vesc_msgs:/home/sdc6/f1tenth_ws/install/vesc:/home/sdc6/f1tenth_ws/install/vesc_driver:/home/sdc6/f1tenth_ws/install/vesc_ackermann:/home/sdc6/f1tenth_ws/install/teleop_tools:/home/sdc6/f1tenth_ws/install/teleop_tools_msgs:/home/sdc6/f1tenth_ws/install/f1tenth_mppi:/home/sdc6/f1tenth_ws/install/ackermann_mux:/home/sdc6/f1tenth_ws/install/f1tenth_stack:/home/sdc6/f1tenth_ws/install/joy_teleop:/home/sdc6/f1tenth_ws/install/mouse_teleop:/home/sdc6/f1tenth_ws/install/kinematic_mpc:/home/sdc6/f1tenth_ws/install/key_teleop:/opt/ros/humble LD_LIBRARY_PATH=/home/sdc6/f1tenth_ws/install/vesc_msgs/lib:/home/sdc6/f1tenth_ws/install/vesc_driver/lib:/home/sdc6/f1tenth_ws/install/vesc_ackermann/lib:/home/sdc6/f1tenth_ws/install/teleop_tools_msgs/lib:/usr/local/cuda/lib64:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/usr/local/cuda-12.6/lib64 PS1=(test_env) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ VIRTUAL_ENV_PROMPT=(test_env) /usr/bin/cmake --install /home/sdc6/f1tenth_ws/build/vesc_ackermann

@@ -57,7 +57,8 @@ class StopSignDetector(Node):
         self.bridge = CvBridge()
         
         self.get_logger().info("Loading YOLO...")
-        self.model = YOLO("yolo26n.pt")
+        #self.model = YOLO("yolo26n.pt")
+        self.model = YOLO("runs/detect/train-2/weights/best.pt")
         if torch.cuda.is_available():
             self.model.to('cuda')
             self.get_logger().info("YOLO loaded :)")
@@ -73,7 +74,9 @@ class StopSignDetector(Node):
         self.latest_depth_image = None
 
         # Publisher for lightweight distance primitive
-        self.distance_pub = self.create_publisher(Float32, '/stop_sign/distance', 1)
+        self.stop_sign_distance_pub = self.create_publisher(Float32, '/sdc6/stop_sign/distance', 1)
+        self.yield_sign_distance_pub = self.create_publisher(Float32, '/sdc6/yield_sign/distance', 1)
+        self.road_work_ahead_sign_distance_pub = self.create_publisher(Float32, '/sdc6/road_work_ahead_sign/distance', 1)
 
         # Image synchronizers
         img_qos = QoSProfile(reliability=ReliabilityPolicy.BEST_EFFORT, history=HistoryPolicy.KEEP_LAST, depth=1)
@@ -113,9 +116,14 @@ class StopSignDetector(Node):
                 continue
 
             results = self.model(img_to_process, device=device_str, imgsz=640, stream=False, verbose=False)
-            closest_sign_distance = float('inf')
-            sign_detected = False 
-            annotated_img = img_to_process.copy()
+            closest_stop_sign_distance = float('inf')
+            closest_yield_sign_distance = float('inf')
+            closest_road_work_ahead_sign_distance = float('inf')
+            
+            stop_sign_detected = False 
+            yield_sign_detected = False
+            road_work_ahead_sign_detected = False
+           # annotated_img = img_to_process.copy()
           
             for r in results:
                 for box in r.boxes:
@@ -123,8 +131,8 @@ class StopSignDetector(Node):
                     label = self.model.names[class_id]
                     confidence = float(box.conf[0])
                     
-                    if label == 'stop sign' and confidence > 0.4:
-                        sign_detected = True
+                    if label == 'Stop-sign' and confidence > 0.4:
+                        stop_sign_detected = True
                         x1, y1, x2, y2 = map(int, box.xyxy[0].cpu().numpy())
                         y1, y2 = max(0, y1), min(depth_to_process.shape[0], y2)
                         x1, x2 = max(0, x1), min(depth_to_process.shape[1], x2)
@@ -137,33 +145,75 @@ class StopSignDetector(Node):
                                 median_mm = np.percentile(valid_depths, 25)
                                 distance_m = median_mm / 1000.0
                         
-                        box_color = (0, 0, 255) if distance_m <= 10.0 else (0, 255, 0)
-                        cv2.rectangle(annotated_img, (x1, y1), (x2, y2), box_color, 3)
-                        if distance_m < closest_sign_distance:
-                            closest_sign_distance = distance_m
+                        #box_color = (0, 0, 255) if distance_m <= 10.0 else (0, 255, 0)
+                        #cv2.rectangle(annotated_img, (x1, y1), (x2, y2), box_color, 3)
+                        if distance_m < closest_stop_sign_distance:
+                            closest_stop_sign_distance = distance_m
+                    if label == 'Yield-Sign' and confidence > 0.4:
+                        yield_sign_detected = True
+                        x1, y1, x2, y2 = map(int, box.xyxy[0].cpu().numpy())
+                        y1, y2 = max(0, y1), min(depth_to_process.shape[0], y2)
+                        x1, x2 = max(0, x1), min(depth_to_process.shape[1], x2)
+                        depth_crop = depth_to_process[y1:y2,x1:x2]
+                       
+                        distance_m = float('inf')
+                        if depth_crop.size > 0:
+                            valid_depths = depth_crop[depth_crop > 0]
+                            if valid_depths.size > 0:
+                                median_mm = np.percentile(valid_depths, 25)
+                                distance_m = median_mm / 1000.0
+                        
+                        #box_color = (0, 0, 255) if distance_m <= 10.0 else (0, 255, 0)
+                        #cv2.rectangle(annotated_img, (x1, y1), (x2, y2), box_color, 3)
+                        if distance_m < closest_yield_sign_distance:
+                            closest_yield_sign_distance = distance_m
+                    if label == 'Road-Work-Ahead-Sign' and confidence > 0.4:
+                        road_work_ahead_sign_detected = True
+                        x1, y1, x2, y2 = map(int, box.xyxy[0].cpu().numpy())
+                        y1, y2 = max(0, y1), min(depth_to_process.shape[0], y2)
+                        x1, x2 = max(0, x1), min(depth_to_process.shape[1], x2)
+                        depth_crop = depth_to_process[y1:y2,x1:x2]
+                       
+                        distance_m = float('inf')
+                        if depth_crop.size > 0:
+                            valid_depths = depth_crop[depth_crop > 0]
+                            if valid_depths.size > 0:
+                                median_mm = np.percentile(valid_depths, 25)
+                                distance_m = median_mm / 1000.0
+                        
+                        #box_color = (0, 0, 255) if distance_m <= 10.0 else (0, 255, 0)
+                        #cv2.rectangle(annotated_img, (x1, y1), (x2, y2), box_color, 3)
+                        if distance_m < closest_road_work_ahead_sign_distance:
+                            closest_road_work_ahead_sign_distance = distance_m
 
             # Publish the message to the control node
-            msg = Float32()
-            msg.data = closest_sign_distance if sign_detected else -1.0
-            self.distance_pub.publish(msg)
+            stop_msg = Float32()
+            yield_msg = Float32()
+            road_work_msg = Float32()
+            stop_msg.data = closest_stop_sign_distance if stop_sign_detected else -1.0
+            yield_msg.data = closest_yield_sign_distance if yield_sign_detected else -1.0
+            road_work_msg.data = closest_road_work_ahead_sign_distance if road_work_ahead_sign_detected else -1.0
+            self.stop_sign_distance_pub.publish(stop_msg)
+            self.yield_sign_distance_pub.publish(yield_msg)
+            self.road_work_ahead_sign_distance_pub.publish(road_work_msg)
 
             # Draw visualizer text overlay
-            status_text = "STOOOOOP" if sign_detected else "GOGOGOGOGOGO"
-            status_color = (0, 0, 255) if sign_detected else (0, 255, 0)
-            cv2.rectangle(annotated_img, (10, 10), (290, 75), (0, 0, 0), -1)
-            cv2.putText(annotated_img, status_text, (20, 35), cv2.FONT_HERSHEY_SIMPLEX, 0.7, status_color, 2)
-            dist_str = f"{closest_sign_distance:.2f}m away" if sign_detected else "No sign :("
-            cv2.putText(annotated_img, dist_str, (20, 65), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 1)
+            #status_text = "STOOOOOP" if sign_detected else "GOGOGOGOGOGO"
+            #status_color = (0, 0, 255) if sign_detected else (0, 255, 0)
+            #cv2.rectangle(annotated_img, (10, 10), (290, 75), (0, 0, 0), -1)
+            #cv2.putText(annotated_img, status_text, (20, 35), cv2.FONT_HERSHEY_SIMPLEX, 0.7, status_color, 2)
+            #dist_str = f"{closest_sign_distance:.2f}m away" if sign_detected else "No sign :("
+            #cv2.putText(annotated_img, dist_str, (20, 65), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 1)
 
-            if self.image_queue.full():
-                try:
-                    self.image_queue.get_nowait()
-                except Exception:
-                    pass 
-            try:
-                self.image_queue.put(annotated_img)
-            except Exception:
-                pass 
+            #if self.image_queue.full():
+            #    try:
+            #        self.image_queue.get_nowait()
+            #    except Exception:
+            #        pass 
+            #try:
+            #    self.image_queue.put(annotated_img)
+            #except Exception:
+            #    pass 
             time.sleep(0.01)
 
 def main(args=None):

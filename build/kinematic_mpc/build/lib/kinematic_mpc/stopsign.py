@@ -73,7 +73,7 @@ class StopSignDetector(Node):
         self.latest_depth_image = None
 
         # Publisher for lightweight distance primitive
-        self.distance_pub = self.create_publisher(Float32, '/stop_sign/distance', 1)
+        self.distance_pub = self.create_publisher(Float32, '/sdc6/stop_sign/distance', 1)
 
         # Image synchronizers
         img_qos = QoSProfile(reliability=ReliabilityPolicy.BEST_EFFORT, history=HistoryPolicy.KEEP_LAST, depth=1)

@@ -17,12 +17,28 @@ import matplotlib.pyplot as plt
     # [2.5, 1.5],
     # [-2.5, 1.5]
 
+#workspace_corners = np.array([
+#    [-4.0, -2.0],
+#    [-4.0,0.0],
+#    [-2.0, 0.0],
+#    [-2.0, -2.0]
+#], dtype=float)
+
 workspace_corners = np.array([
-    [-2.0, -2.0],
-    [-2.0,0.0],
-    [0.0, 0.0],
-    [0.0, -2.0]
+    [-3.5, -3.0],
+    [-3.5,-1.0],
+    [2.75, -1.0],
+    [2.75, -3.0]
 ], dtype=float)
+
+#workspace_corners = np.array([
+#    [-3.0, -2.0],
+#    [2.0,-3.0],
+#    [-3.0, -3.0],
+#    [2.0, -2.0]
+#], dtype=float)
+
+
 
 # Distance from the wall to the generated trajectory centerline
 safety_margin = 0.10   # meters

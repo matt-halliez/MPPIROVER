@@ -1,0 +1,11 @@
+source;share/f1tenth_mppi/hook/cmake_prefix_path.ps1
+source;share/f1tenth_mppi/hook/cmake_prefix_path.dsv
+source;share/f1tenth_mppi/hook/cmake_prefix_path.sh
+source;share/f1tenth_mppi/hook/pythonpath.ps1
+source;share/f1tenth_mppi/hook/pythonpath.dsv
+source;share/f1tenth_mppi/hook/pythonpath.sh
+source;share/f1tenth_mppi/local_setup.bash
+source;share/f1tenth_mppi/local_setup.dsv
+source;share/f1tenth_mppi/local_setup.ps1
+source;share/f1tenth_mppi/local_setup.sh
+source;share/f1tenth_mppi/local_setup.zsh
