@@ -1,0 +1,4 @@
+[console_scripts]
+optitrack_car1_node = optitrack.optitrack_car1_node:main
+optitrack_car2_node = optitrack.optitrack_car2_node:main
+

@@ -1,0 +1,3 @@
+[console_scripts]
+stopsign_node = realsense.stopsign:main
+

@@ -17,7 +17,6 @@ repo-backup.bundle
 *.pt
 *.npz
 *.pyc
-*.txt
 *.zip
 *.json
 *.log

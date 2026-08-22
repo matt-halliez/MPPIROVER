@@ -1,0 +1,16 @@
+/home/sdc6/f1tenth_ws/install/f1tenth_intersection_driver/share/f1tenth_intersection_driver/launch/full_system.launch.py
+/home/sdc6/f1tenth_ws/install/f1tenth_intersection_driver/share/ament_index/resource_index/package_run_dependencies/f1tenth_intersection_driver
+/home/sdc6/f1tenth_ws/install/f1tenth_intersection_driver/share/ament_index/resource_index/parent_prefix_path/f1tenth_intersection_driver
+/home/sdc6/f1tenth_ws/install/f1tenth_intersection_driver/share/f1tenth_intersection_driver/environment/ament_prefix_path.sh
+/home/sdc6/f1tenth_ws/install/f1tenth_intersection_driver/share/f1tenth_intersection_driver/environment/ament_prefix_path.dsv
+/home/sdc6/f1tenth_ws/install/f1tenth_intersection_driver/share/f1tenth_intersection_driver/environment/path.sh
+/home/sdc6/f1tenth_ws/install/f1tenth_intersection_driver/share/f1tenth_intersection_driver/environment/path.dsv
+/home/sdc6/f1tenth_ws/install/f1tenth_intersection_driver/share/f1tenth_intersection_driver/local_setup.bash
+/home/sdc6/f1tenth_ws/install/f1tenth_intersection_driver/share/f1tenth_intersection_driver/local_setup.sh
+/home/sdc6/f1tenth_ws/install/f1tenth_intersection_driver/share/f1tenth_intersection_driver/local_setup.zsh
+/home/sdc6/f1tenth_ws/install/f1tenth_intersection_driver/share/f1tenth_intersection_driver/local_setup.dsv
+/home/sdc6/f1tenth_ws/install/f1tenth_intersection_driver/share/f1tenth_intersection_driver/package.dsv
+/home/sdc6/f1tenth_ws/install/f1tenth_intersection_driver/share/ament_index/resource_index/packages/f1tenth_intersection_driver
+/home/sdc6/f1tenth_ws/install/f1tenth_intersection_driver/share/f1tenth_intersection_driver/cmake/f1tenth_intersection_driverConfig.cmake
+/home/sdc6/f1tenth_ws/install/f1tenth_intersection_driver/share/f1tenth_intersection_driver/cmake/f1tenth_intersection_driverConfig-version.cmake
+/home/sdc6/f1tenth_ws/install/f1tenth_intersection_driver/share/f1tenth_intersection_driver/package.xml
