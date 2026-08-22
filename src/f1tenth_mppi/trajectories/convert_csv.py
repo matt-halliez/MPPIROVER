@@ -23,7 +23,7 @@ HOW TO USE
 #files_in   = ["siccs_first_floor_1.csv"]          # add more if you like
 #files_out  = ["siccs_first_floor_dyn.csv"]        # must match length of files_in
 files_in = ["generated_square_trajectory_small.csv"]
-files_out = ["gsts.csv"]
+files_out = ["/home/sdc6/f1tenth_ws/gsts.csv"]
 vx_default = 5.00                         # m/s
 ax_default = 0.00                         # m/s²
 # ────────────────────────────────────────────────────────────────────── #

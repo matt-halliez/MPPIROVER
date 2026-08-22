@@ -148,6 +148,7 @@ rosidl_generator_c/vesc_msgs/msg/vesc_state.h: /opt/ros/humble/share/geometry_ms
 rosidl_generator_c/vesc_msgs/msg/vesc_state.h: /opt/ros/humble/share/geometry_msgs/msg/Vector3.idl
 rosidl_generator_c/vesc_msgs/msg/vesc_state.h: /opt/ros/humble/share/geometry_msgs/msg/Vector3Stamped.idl
 rosidl_generator_c/vesc_msgs/msg/vesc_state.h: /opt/ros/humble/share/geometry_msgs/msg/VelocityStamped.idl
+rosidl_generator_c/vesc_msgs/msg/vesc_state.h: /opt/ros/humble/share/geometry_msgs/msg/VelocityWithCovarianceStamped.idl
 rosidl_generator_c/vesc_msgs/msg/vesc_state.h: /opt/ros/humble/share/geometry_msgs/msg/Wrench.idl
 rosidl_generator_c/vesc_msgs/msg/vesc_state.h: /opt/ros/humble/share/geometry_msgs/msg/WrenchStamped.idl
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sdc6/f1tenth_ws/build/vesc_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C code for ROS interfaces"

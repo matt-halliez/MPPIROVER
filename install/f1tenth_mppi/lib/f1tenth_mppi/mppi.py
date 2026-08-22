@@ -153,6 +153,5 @@ class MPPI():
             env_state, output = rollout_step(env_state, actions[t, :])
             scan_output.append(output)
         states, reward = jax.tree_util.tree_map(lambda *x: jnp.stack(x), *scan_output)
-   
         return reward, states
    

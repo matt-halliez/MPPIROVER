@@ -51,18 +51,18 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3.10/site-packages/f1tenth_mppi-0.0.0-py3.10.egg-info" TYPE DIRECTORY FILES "/home/sdc6/f1tenth_ws/build/f1tenth_mppi/ament_cmake_python/f1tenth_mppi/f1tenth_mppi.egg-info/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/local/lib/python3.10/dist-packages/f1tenth_mppi-0.0.0-py3.10.egg-info" TYPE DIRECTORY FILES "/home/sdc6/f1tenth_ws/build/f1tenth_mppi/ament_cmake_python/f1tenth_mppi/f1tenth_mppi.egg-info/")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3.10/site-packages/f1tenth_mppi" TYPE DIRECTORY FILES "/home/sdc6/f1tenth_ws/src/f1tenth_mppi/f1tenth_mppi/" REGEX "/[^/]*\\.pyc$" EXCLUDE REGEX "/\\_\\_pycache\\_\\_$" EXCLUDE)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/local/lib/python3.10/dist-packages/f1tenth_mppi" TYPE DIRECTORY FILES "/home/sdc6/f1tenth_ws/src/f1tenth_mppi/f1tenth_mppi/" REGEX "/[^/]*\\.pyc$" EXCLUDE REGEX "/\\_\\_pycache\\_\\_$" EXCLUDE)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   execute_process(
         COMMAND
-        "/home/sdc6/test/test_env/bin/python3" "-m" "compileall"
-        "/home/sdc6/f1tenth_ws/install/f1tenth_mppi/lib/python3.10/site-packages/f1tenth_mppi"
+        "/usr/bin/python3" "-m" "compileall"
+        "/home/sdc6/f1tenth_ws/install/f1tenth_mppi/local/lib/python3.10/dist-packages/f1tenth_mppi"
       )
 endif()
 
@@ -70,6 +70,15 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/f1tenth_mppi" TYPE PROGRAM FILES
     "/home/sdc6/f1tenth_ws/src/f1tenth_mppi/scripts/mppi.py"
     "/home/sdc6/f1tenth_ws/src/f1tenth_mppi/scripts/mppi_node.py"
+    "/home/sdc6/f1tenth_ws/src/f1tenth_mppi/scripts/stl_svpio.py"
+    "/home/sdc6/f1tenth_ws/src/f1tenth_mppi/scripts/stl_svpio_node.py"
+    )
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/f1tenth_mppi" TYPE DIRECTORY FILES
+    "/home/sdc6/f1tenth_ws/src/f1tenth_mppi/launch"
+    "/home/sdc6/f1tenth_ws/src/f1tenth_mppi/config"
     )
 endif()
 

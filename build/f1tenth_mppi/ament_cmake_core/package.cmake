@@ -5,7 +5,7 @@ set(f1tenth_mppi_BUILD_DEPENDS "rclcpp" "rclpy" "std_msgs" "sensor_msgs" "ackerm
 set(f1tenth_mppi_BUILDTOOL_DEPENDS "ament_cmake" "ament_cmake_python")
 set(f1tenth_mppi_BUILD_EXPORT_DEPENDS "rclcpp" "rclpy" "std_msgs" "sensor_msgs" "ackermann_msgs" "geometry_msgs" "visualization_msgs" "Eigen3" "tf2_ros" "python3-numba")
 set(f1tenth_mppi_BUILDTOOL_EXPORT_DEPENDS )
-set(f1tenth_mppi_EXEC_DEPENDS "rclcpp" "rclpy" "std_msgs" "sensor_msgs" "ackermann_msgs" "geometry_msgs" "visualization_msgs" "Eigen3" "tf2_ros" "python3-numba")
+set(f1tenth_mppi_EXEC_DEPENDS "ros2launch" "rclcpp" "rclpy" "std_msgs" "sensor_msgs" "ackermann_msgs" "geometry_msgs" "visualization_msgs" "Eigen3" "tf2_ros" "python3-numba")
 set(f1tenth_mppi_TEST_DEPENDS "ament_lint_auto" "ament_lint_common")
 set(f1tenth_mppi_GROUP_DEPENDS )
 set(f1tenth_mppi_MEMBER_OF_GROUPS )

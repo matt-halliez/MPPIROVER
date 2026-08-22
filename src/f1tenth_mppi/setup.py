@@ -1,3 +1,5 @@
+import os
+from glob import glob
 from setuptools import setup
 
 package_name = 'f1tenth_mppi'
@@ -10,17 +12,20 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+        (os.path.join('share', package_name, 'launch'), glob('launch/*')),
+        (os.path.join('share', package_name, 'config'), glob('config/*')),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='zzangupenn, Hongrui Zheng',
-    maintainer_email='zzang@seas.upenn.edu, billyzheng.bz@gmail.com',
+    maintainer='MATT',
+    maintainer_email='',
     description='f1tenth mppi',
     license='MIT',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'mppi_node = mppi.mppi_node:main',
+            'mppi_node = f1tenth_mppi.mppi_node:main',
+            'stl_svpio_node = f1tenth_mppi.stl_svpio_node:main',
         ],
     },
 )

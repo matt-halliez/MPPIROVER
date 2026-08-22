@@ -24,12 +24,22 @@ import matplotlib.pyplot as plt
 #    [-2.0, -2.0]
 #], dtype=float)
 
+#workspace_corners = np.array([
+#    [-3.5, -3.0],
+#    [-3.5,-1.0],
+#    [2.75, -1.0],
+#    [2.75, -3.0]
+#], dtype=float)
+
 workspace_corners = np.array([
-    [-3.5, -3.0],
-    [-3.5,-1.0],
-    [2.75, -1.0],
-    [2.75, -3.0]
+    [-4.8, -2.0],
+    [-4.8,0.0],
+    [2.0, 0.0],
+    [2.0, -2.0]
 ], dtype=float)
+
+
+
 
 #workspace_corners = np.array([
 #    [-3.0, -2.0],

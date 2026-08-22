@@ -143,6 +143,7 @@ rosidl_typesupport_introspection_cpp/vesc_msgs/msg/detail/vesc_state__rosidl_typ
 rosidl_typesupport_introspection_cpp/vesc_msgs/msg/detail/vesc_state__rosidl_typesupport_introspection_cpp.hpp: /opt/ros/humble/share/geometry_msgs/msg/Vector3.idl
 rosidl_typesupport_introspection_cpp/vesc_msgs/msg/detail/vesc_state__rosidl_typesupport_introspection_cpp.hpp: /opt/ros/humble/share/geometry_msgs/msg/Vector3Stamped.idl
 rosidl_typesupport_introspection_cpp/vesc_msgs/msg/detail/vesc_state__rosidl_typesupport_introspection_cpp.hpp: /opt/ros/humble/share/geometry_msgs/msg/VelocityStamped.idl
+rosidl_typesupport_introspection_cpp/vesc_msgs/msg/detail/vesc_state__rosidl_typesupport_introspection_cpp.hpp: /opt/ros/humble/share/geometry_msgs/msg/VelocityWithCovarianceStamped.idl
 rosidl_typesupport_introspection_cpp/vesc_msgs/msg/detail/vesc_state__rosidl_typesupport_introspection_cpp.hpp: /opt/ros/humble/share/geometry_msgs/msg/Wrench.idl
 rosidl_typesupport_introspection_cpp/vesc_msgs/msg/detail/vesc_state__rosidl_typesupport_introspection_cpp.hpp: /opt/ros/humble/share/geometry_msgs/msg/WrenchStamped.idl
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sdc6/f1tenth_ws/build/vesc_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ introspection for ROS interfaces"

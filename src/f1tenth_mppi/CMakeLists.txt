@@ -31,10 +31,6 @@ endforeach()
 
 
 
-
-
-
-
 # Install Python modules
 ament_python_install_package(${PROJECT_NAME})
 
@@ -42,6 +38,8 @@ ament_python_install_package(${PROJECT_NAME})
 install(PROGRAMS
   scripts/mppi.py
   scripts/mppi_node.py
+  scripts/stl_svpio.py
+  scripts/stl_svpio_node.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
@@ -58,6 +56,11 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 
-
+# Install launch and config directories
+install(DIRECTORY
+  launch
+  config
+  DESTINATION share/${PROJECT_NAME}
+)
 
 ament_package()

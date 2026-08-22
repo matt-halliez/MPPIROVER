@@ -1,5 +1,8 @@
 #!/usr/bin/env python3 
 import os
+
+os.environ["XLA_PYTHON_CLIENT_PREALLOCATE"] = "false"
+#os.environ["JAX_PLATFORMS"] = "cuda"
 os.environ["JAX_PLATFORMS"] = "cpu"
 import jax
 import jax.numpy as jnp
@@ -444,8 +447,8 @@ class MPPIPlanner(Node):
         super().__init__('mppi_node')
         #self.waypoint_path = "/home/juan/sim_ws/src/f1tenth_mppi/trajectories/levine_1.csv"
         #self.waypoint_path = "/home/juan/sim_ws/src/f1tenth_mppi/trajectories/siccs_first_floor_dyn.csv"
-        #self.waypoint_path = "/home/sdc6/f1tenth_ws/src/f1tenth_mppi/trajectories/siccs_first_floor_dyn.csv"
-        self.waypoint_path = "/home/sdc6/gsts.csv"
+        #self.waypoint_path = "/f1tenth_ws/src/f1tenth_mppi/trajectories/siccs_first_floor_dyn.csv"
+        self.waypoint_path = "/home/sdc6/f1tenth_ws/gsts.csv"
         self.control_debug = True
         
         self.enable_drive = True 
@@ -480,7 +483,7 @@ class MPPIPlanner(Node):
         self.DT = 0.1
         self.on_car = False
         #pose_topic = "/pf/viz/inferred_pose" if self.on_car else "/ego_racecar/odom"
-        #pose_topic = "/odom"
+        
         
         #self.pose_sub_ = self.create_subscription(PoseStamped if self.on_car else Odometry, pose_topic, self.pose_callback, 1)
         self.normalization_param = np.array(self.config.normalization_param).T
@@ -492,6 +495,8 @@ class MPPIPlanner(Node):
         self.SELF_ID = int(self.get_parameter('self_object_id').value)
         self.OTHER_ID = int(self.get_parameter('other_object_id').value)
 
+        #odom switch
+        #pose_topic = "/odom"
         pose_topic = f"/optitrack/object_560/pose"
 
         
@@ -532,6 +537,7 @@ class MPPIPlanner(Node):
         
 
         self.stop_sign_sub = self.create_subscription(Float32,'/sdc6/stop_sign/distance',self.stop_sign_distance_callback,1)
+        #odom switch
         self.pose_sub = self.create_subscription(PoseStamped,pose_topic,self.pose_callback,qos_profile_sensor_data)
         #self.pose_sub = self.create_subscription(Odometry,pose_topic,self.pose_callback,qos_profile_sensor_data)
         self.odom_sub = self.create_subscription(Odometry,f'/optitrack/object_560/odom',self.odom_callback,qos_profile_sensor_data)
@@ -543,6 +549,9 @@ class MPPIPlanner(Node):
     def traffic_pose_callback(self, pose_msg):
         x = pose_msg.pose.position.x
         y = pose_msg.pose.position.y 
+        #odom switch 
+        #x = pose_msg.pose.pose.position.x
+        #y = pose_msg.pose.pose.position.y 
         with self.traffic_lock:
             self.other_car_pose = (x,y)
     
@@ -682,13 +691,21 @@ class MPPIPlanner(Node):
         self.a_cov = self.mppi.a_cov
 
         self.mppi_distrib = (self.a_opt, self.a_cov)
+
+        dummy_state = np.zeros(5)
+        self.mppi_env.get_refernece_traj(dummy_state, target_speed=0.1, vind=5, speed_factor=1)
+        _ = self.mppi.update(self.mppi_env, dummy_state, self.jRNG.new_key())
+        self.get_logger().info("MPPI warm-up compile done")
+
     
     def pose_callback(self, pose_msg):
-        
+        #print("pose_callback triggered", flush = True)
         start = time.time()
         current_time = time.time()
         with self.pose_lock:
             self.own_pose = (pose_msg.pose.position.x, pose_msg.pose.position.y)
+            #odom switch
+            #self.own_pose = (pose_msg.pose.pose.position.x, pose_msg.pose.pose.position.y)
         with self.detect_lock:
             if self.car_should_stop:
                 self.drive_msg_.drive.speed = 0.0
@@ -711,7 +728,7 @@ class MPPIPlanner(Node):
         x_state = pose_msg.pose.position.x 
         y_state = pose_msg.pose.position.y 
         curr_orien = pose_msg.pose.orientation 
-
+        #odom switch
         #x_state = pose_msg.pose.pose.position.x
         #y_state =  pose_msg.pose.pose.position.y
         #curr_orien = pose_msg.pose.pose.orientation
@@ -729,13 +746,16 @@ class MPPIPlanner(Node):
         # print(da.shape)
 
         #ref_traj,_ = self.mppi_env.get_refernece_traj(state, target_speed = self.target_vel,  vind = 5, speed_factor= 1)
+        
         ref_traj,_ = self.mppi_env.get_refernece_traj(state,target_speed = local_ref_speed,vind = 5, speed_factor = 1)
         # print(ref_traj.shape) #[n_steps + 1, 7]
-
+        
         self.mppi_distrib, sampled_traj, s_opt = self.mppi.update(self.mppi_env, state.copy(), self.jRNG.new_key())
-
+        #self.mppi_distrib, sampled_traj, s_opt = self.mppi.update(self.mppi_env, state.copy(), jax.random.PRNGKey(0))
+       
         a_opt = self.mppi_distrib[0]
         control = a_opt[0]
+        
         scaled_control = np.multiply(self.norm_param, control)
         # TODO: check the mppi outputs( its in steerv, accl), convert to vel and steering angle control ig and check mpc node what they do
         
@@ -757,6 +777,12 @@ class MPPIPlanner(Node):
             
             
         dt = time.time() - start
+        if not hasattr(self, '_call_times'):
+            self._call_times = []
+        self._call_times.append(dt)
+        if len(self._call_times) in (1, 2, 5, 10, 20):
+            self.get_logger().info(f"call #{len(self._call_times)}: {dt*1000:.1f} ms")
+        
         # timing_msg = Float32MultiArray()
         # hz = 1.0 / dt if dt > 0 else float('inf')
         # timing_msg.data = [dt, hz]

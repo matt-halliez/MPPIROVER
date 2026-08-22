@@ -67,7 +67,7 @@ include CMakeFiles/ament_cmake_python_build_f1tenth_mppi_egg.dir/compiler_depend
 include CMakeFiles/ament_cmake_python_build_f1tenth_mppi_egg.dir/progress.make
 
 CMakeFiles/ament_cmake_python_build_f1tenth_mppi_egg:
-	cd /home/sdc6/f1tenth_ws/build/f1tenth_mppi/ament_cmake_python/f1tenth_mppi && /home/sdc6/test/test_env/bin/python3 setup.py egg_info
+	cd /home/sdc6/f1tenth_ws/build/f1tenth_mppi/ament_cmake_python/f1tenth_mppi && /usr/bin/python3 setup.py egg_info
 
 ament_cmake_python_build_f1tenth_mppi_egg: CMakeFiles/ament_cmake_python_build_f1tenth_mppi_egg
 ament_cmake_python_build_f1tenth_mppi_egg: CMakeFiles/ament_cmake_python_build_f1tenth_mppi_egg.dir/build.make

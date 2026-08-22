@@ -1,0 +1,36 @@
+# STL-SVPIO solver
+dt: 0.10
+n_steps: 30
+n_particles: 16
+n_iterations: 8
+step_size: 5.0
+temperature: 1.0
+random_seed: 1337
+control_scale: [1.5, 1.0]
+
+# Differentiable STL semantics
+smooth_beta: 80.0
+
+# Route and traffic predicates
+cruise_speed: 1.2
+speed_limit: 1.2
+lane_half_width: 0.45
+heading_tolerance: 0.35
+collision_distance: 0.75
+goal_radius: 0.25
+
+# Stop-sign rule
+stop_detection_distance: 10.0
+stl_stop_activation_distance: 1.25
+target_stop_offset: 0.30
+stop_zone: 0.18
+stop_speed: 0.05
+stop_hold_time: 1.0
+cross_margin: 0.05
+intersection_release_distance: 0.80
+stop_cooldown: 1.0
+
+# Vehicle model / independent emergency guard
+model_accel_limit: 0.5
+emergency_stop_margin: 0.03
+emergency_collision_distance: 0.55
