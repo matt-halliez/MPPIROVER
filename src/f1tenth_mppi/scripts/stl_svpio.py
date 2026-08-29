@@ -17,6 +17,12 @@ class STLSVPIO:
         self.temperature = float(temperature)
         self.flat_dim = self.horizon * self.control_dim
 
+        self.previous_controls = jnp.zeros(
+            (self.horizon, self.control_dim),
+            dtype=jnp.float32,
+        )
+
+
     def _svgd_step(self, env, particles, state, reference, traffic):
         def particle_robustness(control_sequence):
             states = env.rollout(state, control_sequence)
@@ -57,28 +63,60 @@ class STLSVPIO:
 
         return jax.vmap(evaluate_particle)(particles)
 
+
     @partial(jax.jit, static_argnums=(0, 1))
-    def _optimize(self, env, state, reference, traffic, rng):
-        particles = jax.random.uniform(
+    def _optimize(self, env, state, reference, traffic, rng, previous_controls,):
+        noise = jax.random.normal(
             rng,
-            shape=(self.n_particles, self.horizon, self.control_dim),
-            minval=-1.0,
-            maxval=1.0,
+            shape=(
+                self.n_particles,
+                self.horizon,
+                self.control_dim,
+            ),
+        )
+
+        particles = jnp.clip(
+            previous_controls[None, :, :] + 0.35 * noise,
+            -1.0,
+            1.0,
         )
 
         def optimization_step(_, current_particles):
             return self._svgd_step(
-                env, current_particles, state, reference, traffic
+                env,
+                current_particles,
+                state,
+                reference,
+                traffic,
             )
 
         particles = jax.lax.fori_loop(
-            0, self.n_iterations, optimization_step, particles
+            0,
+            self.n_iterations,
+            optimization_step,
+            particles,
         )
+
         robustness, trajectories = self._evaluate(
             env, particles, state, reference, traffic
         )
         best_index = jnp.argmax(robustness)
         return particles[best_index], trajectories[best_index], robustness[best_index]
 
+
     def update(self, env, state, reference, traffic, rng):
-        return self._optimize(env, state, reference, traffic, rng)
+        best_controls, best_states, robustness = self._optimize(
+            env,
+            state,
+            reference,
+            traffic,
+            rng,
+            self.previous_controls,
+        )
+
+        self.previous_controls = jnp.concatenate(
+            (best_controls[1:], best_controls[-1:]),
+            axis=0,
+        )
+
+        return best_controls, best_states, robustness

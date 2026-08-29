@@ -278,7 +278,7 @@ class STLTrafficPlanner(Node):
         self.drive_msg = AckermannDriveStamped()
         self.current_pose = None
         self.current_yaw = 0.0
-        self.current_speed = 0.0
+        self.current_speed = None
         self.other_pose = None
         self.other_yaw = 0.0
         self.other_velocity = np.zeros(2, dtype=np.float64)
@@ -337,6 +337,8 @@ class STLTrafficPlanner(Node):
             self.other_status_callback,
             1,
         )
+
+        self.control_timer = self.create_timer(self.dt, self.control_callback)
 
     def _nearest_progress(self, point):
         segment_length_sq = np.sum(self.segment_vectors * self.segment_vectors, axis=1)
@@ -424,7 +426,10 @@ class STLTrafficPlanner(Node):
         signed_distance = float(np.dot(self.stop_point - self.current_pose, self.stop_tangent))
         if not self.stop_completed:
             in_stop_zone = abs(signed_distance) <= self.config["stop_zone"]
-            nearly_stopped = self.current_speed <= self.config["stop_speed"]
+            nearly_stopped = (
+                self.current_speed is not None
+                and self.current_speed <= self.config["stop_speed"]
+            )
             if in_stop_zone and nearly_stopped:
                 if self.stationary_since is None:
                     self.stationary_since = now
@@ -499,14 +504,22 @@ class STLTrafficPlanner(Node):
         )
 
     def pose_callback(self, msg):
-        start_time = time.perf_counter()
-        now = time.time()
-        self.current_pose = np.array([msg.pose.position.x, msg.pose.position.y], dtype=np.float64)
+        self.current_pose = np.array(
+            [msg.pose.position.x, msg.pose.position.y],
+            dtype=np.float64,
+        )
         q = msg.pose.orientation
         self.current_yaw = math.atan2(
             2.0 * (q.w * q.z + q.x * q.y),
             1.0 - 2.0 * (q.y * q.y + q.z * q.z),
         )
+
+    def control_callback(self):
+        if self.current_pose is None or self.current_speed is None:
+            return
+
+        start_time = time.perf_counter()
+        now = time.time()
         self._update_stop_state(now)
 
         state = np.array(
@@ -519,6 +532,7 @@ class STLTrafficPlanner(Node):
             ],
             dtype=np.float32,
         )
+
         reference = self._reference(state)
         traffic = self._traffic_context()
         self.rng, solve_key = jax.random.split(self.rng)
@@ -531,39 +545,97 @@ class STLTrafficPlanner(Node):
             solve_key,
         )
 
-        normalized_control = np.asarray(jax.device_get(best_controls[0]))
-        steer_rate, accel = normalized_control * np.asarray(self.env.control_scale)
-        command_steer = self.drive_msg.drive.steering_angle + float(steer_rate) * self.dt
-        command_speed = self.current_speed + float(accel) * self.dt
-        command_steer = float(np.clip(command_steer, self.env.steer_min, self.env.steer_max))
-        command_speed = float(np.clip(command_speed, 0.0, self.config["speed_limit"]))
+        normalized_control = np.asarray(
+            jax.device_get(best_controls[0]),
+            dtype=np.float32,
+        )
+        steer_rate, accel = normalized_control * np.asarray(
+            self.env.control_scale,
+            dtype=np.float32,
+        )
 
-        if self.stop_line_active and self.current_pose is not None:
-            signed_distance = float(np.dot(self.stop_point - self.current_pose, self.stop_tangent))
-            waiting = (not self.stop_completed) or (
-                self.stop_completed and not self.intersection_committed
+        command_steer = (
+            self.drive_msg.drive.steering_angle
+            + float(steer_rate) * self.dt
+        )
+        command_speed = (
+            self.drive_msg.drive.speed
+            + float(accel) * self.dt
+        )
+
+        command_steer = float(
+            np.clip(
+                command_steer,
+                self.env.steer_min,
+                self.env.steer_max,
             )
-            if waiting and signed_distance <= self.config["emergency_stop_margin"]:
+        )
+        command_speed = float(
+            np.clip(
+                command_speed,
+                0.0,
+                self.config["speed_limit"],
+            )
+        )
+
+        if self.stop_line_active:
+            signed_distance = float(
+                np.dot(
+                    self.stop_point - self.current_pose,
+                    self.stop_tangent,
+                )
+            )
+            waiting = (
+                not self.stop_completed
+                or (
+                    self.stop_completed
+                    and not self.intersection_committed
+                )
+            )
+            if (
+                waiting
+                and signed_distance
+                <= self.config["emergency_stop_margin"]
+            ):
                 command_speed = 0.0
 
         if self.other_pose is not None:
-            current_separation = float(np.linalg.norm(self.current_pose - self.other_pose))
-            if current_separation <= self.config["emergency_collision_distance"]:
+            current_separation = float(
+                np.linalg.norm(self.current_pose - self.other_pose)
+            )
+            if (
+                current_separation
+                <= self.config["emergency_collision_distance"]
+            ):
                 command_speed = 0.0
 
+        self.drive_msg.header.stamp = self.get_clock().now().to_msg()
         self.drive_msg.drive.steering_angle = command_steer
         self.drive_msg.drive.speed = command_speed
+
         if self.enable_drive:
             self.drive_pub.publish(self.drive_msg)
 
         elapsed = time.perf_counter() - start_time
+
         timing_msg = Float32MultiArray()
-        timing_msg.data = [elapsed, 1.0 / elapsed if elapsed > 0.0 else 0.0]
+        timing_msg.data = [
+            elapsed,
+            1.0 / elapsed if elapsed > 0.0 else 0.0,
+        ]
         self.timing_pub.publish(timing_msg)
+
         robustness_msg = Float32()
         robustness_msg.data = float(jax.device_get(robustness))
         self.robustness_pub.publish(robustness_msg)
-        self._publish_trajectory(self.ref_pub, reference[:, :2], 0.0, 0.0, 1.0)
+
+        self._publish_trajectory(
+            self.ref_pub,
+            reference[:, :2],
+            0.0,
+            0.0,
+            1.0,
+        )
         self._publish_trajectory(
             self.opt_pub,
             np.asarray(jax.device_get(best_states[:, :2])),
