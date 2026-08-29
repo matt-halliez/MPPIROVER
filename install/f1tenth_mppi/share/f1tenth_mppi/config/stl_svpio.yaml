@@ -1,6 +1,6 @@
 # STL-SVPIO solver
 dt: 0.10
-n_steps: 20
+n_steps: 30
 n_particles: 16
 n_iterations: 8
 step_size: 5.0

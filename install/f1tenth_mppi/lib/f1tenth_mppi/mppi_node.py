@@ -451,7 +451,7 @@ class MPPIPlanner(Node):
         self.waypoint_path = "/home/sdc6/f1tenth_ws/gsts.csv"
         self.control_debug = True
         
-        self.enable_drive = True 
+        self.enable_drive = False 
 
         self.waypoints = self.load_waypoints(self.waypoint_path)
 

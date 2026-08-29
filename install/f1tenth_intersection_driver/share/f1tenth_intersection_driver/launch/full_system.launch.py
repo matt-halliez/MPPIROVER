@@ -91,7 +91,7 @@ def generate_launch_description():
     mppi_node = Node(
         package='f1tenth_mppi',
         namespace='f1tenth_mppi1',
-        executable='stl_svpio_node.py', # stl_svpio_node.py, mppi_node.py
+        executable='mppi_node.py', # stl_svpio_node.py, mppi_node.py
         name='mppi',
         output='screen'
     )
